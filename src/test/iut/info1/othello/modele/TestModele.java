@@ -4,6 +4,7 @@ import static iut.info1.othello.modele.CouleurPion.BLANC;
 import static iut.info1.othello.modele.CouleurPion.NOIR;
 import static iut.info1.othello.modele.CouleurPion.RIEN;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import iut.info1.othello.modele.CouleurPion;
 import iut.info1.othello.modele.Modele;
 
 class TestModele {
-	
+
 	Modele initialisé;
 
 	@BeforeEach
@@ -33,6 +34,29 @@ class TestModele {
 				{RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN},
 		};
 		assertArrayEquals(RESULTAT, initialisé.getPions());
+	}
+
+	@Test
+	void testTostring() {
+		final String RESULTAT = """
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------
+			|  |  |  |⚫|⚪|  |  |  |
+			-------------------------
+			|  |  |  |⚪|⚫|  |  |  |
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------
+			|  |  |  |  |  |  |  |  |
+			-------------------------""";
+		assertEquals(RESULTAT, initialisé.toString());
 	}
 
 }
