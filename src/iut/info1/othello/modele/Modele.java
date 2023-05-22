@@ -1,12 +1,17 @@
 package iut.info1.othello.modele;
 
-import static iut.info1.othello.modele.CouleurPion.BLANC;
-import static iut.info1.othello.modele.CouleurPion.NOIR;
-import static iut.info1.othello.modele.CouleurPion.RIEN;
+import static iut.info1.othello.modele.ContenuCase.BLANC;
+import static iut.info1.othello.modele.ContenuCase.NOIR;
+import static iut.info1.othello.modele.ContenuCase.RIEN;
 
 public class Modele {
 	
-	CouleurPion[][] plateau = new CouleurPion[8][8];
+	Joueur joueur1;
+	Joueur joueur2;
+	
+	//TODO ajouter constructeur en fonction du type de jeu
+	
+	ContenuCase[][] plateau = new ContenuCase[8][8];
 	
 	/**
 	 * Crée un plateau de 8*8 cases avec la configuration
@@ -29,7 +34,7 @@ public class Modele {
 	 * Le tableau étant mutable, toute modification risque d'impacter DURABLEMENT
 	 * le fonctionnement du programme. A utiliser pour lecture seulement.
 	 */
-	public CouleurPion[][] getPions() {
+	public ContenuCase[][] getPions() {
 		return plateau;
 	}
 
@@ -54,5 +59,19 @@ public class Modele {
 		}
 		resultat += "-------------------------";
 		return resultat;
+	}
+	
+	/** 
+	 * Permet d'ajouter un pion au tableau de pions représentant
+	 * le tableau de jeu. La couleur est déduite automatiquement.
+	 * @param ligne la ligne où ajouter le pion (de 0 à 7)
+	 * @param colonne la colonne où ajouter le pion (de 0 à 7)
+	 */
+	public boolean ajouterPion(int ligne, int colonne) {
+		return true; //TODO bouchon
+	}
+	
+	public boolean peutAjouterBouton(int ligne, int colonne, ContenuCase couleur) {
+		return true; //TODO bouchon
 	}
 }
