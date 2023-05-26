@@ -3,12 +3,10 @@ package iut.info1.othello.controleur;
 public class ControleurMenu {
 
 	public ControleurMenu() {
+	}
+	
+	public void creerPartiePVP() {
 		
-		enum ModeJeu {
-			PVP,
-			IA_FACILE,
-			IA_DIFFICILE
-		}
 	}
 
 }

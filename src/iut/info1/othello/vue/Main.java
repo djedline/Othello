@@ -20,13 +20,5 @@ public class Main extends Application {
 		stage.setTitle("Othello");
 		stage.setScene(scene);
 		stage.show();
-		
-		
 	}
-
-	public static void main(String[] args) {
-		launch();
-		
-	}
-
 }
