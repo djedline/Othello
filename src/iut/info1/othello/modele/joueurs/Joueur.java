@@ -4,14 +4,26 @@ import static iut.info1.othello.modele.ContenuCase.RIEN;
 
 import iut.info1.othello.modele.ContenuCase;
 
+/**
+ * Représente tout joueur, qu'il s'agisse d'un joueur humain ou d'une IA.
+ */
 public class Joueur {
 
+	/**
+	 * Nom du joueur, défini par avance.
+	 */
 	String nom;
+	
+	/**
+	 * La couleur de pion associée au joueur. Ne peut être RIEN.
+	 */
 	ContenuCase couleur;
 
 	/**
 	 * Crée un joueur assigné à une couleur de pion.
-	 * @param couleur
+	 * @param couleur la couleur de pion associée.
+	 * @throws IllegalArgumentException si la couleur passée en paramètre
+	 * est RIEN.
 	 */
 	public Joueur(ContenuCase couleur) {
 		if (couleur == RIEN) {
@@ -21,12 +33,18 @@ public class Joueur {
 		this.couleur = couleur;
 	}
 
+	/**
+	 * @return la couleur du joueur
+	 */
 	public ContenuCase getCouleur() {
 		return couleur;
 	}
-
-	public void jouer() {
-
+	
+	/**
+	 * @return le nom par défaut du joueur.
+	 */
+	public String getNom() {
+		return nom;
 	}
 
 }

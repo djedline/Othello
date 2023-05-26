@@ -15,6 +15,9 @@ import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
 import iut.info1.othello.modele.joueurs.JoueurHumain;
 
+/**
+ * Tests unitaires de la classe TestModele.
+ */
 class TestModele {
 
 	Modele initialisé;

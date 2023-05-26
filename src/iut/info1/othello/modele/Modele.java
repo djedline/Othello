@@ -42,29 +42,6 @@ public class Modele {
 	}
 
 	/**
-	 * Affiche les éléments du plateau.
-	 */
-	@Override
-	public String toString() {
-		String resultat = new String();
-		for (int lignes = 0 ; lignes < getPions().length ; lignes++) {
-			resultat += "-------------------------\n|";
-			for (int colonnes = 0 ; colonnes < getPions()[lignes].length ; colonnes++) {
-				String pion = " ";
-				switch (getPions()[lignes][colonnes]) {
-				case NOIR -> pion =  "⚫";
-				case BLANC -> pion = "⚪";
-				case RIEN -> pion =  "  ";
-				}
-				resultat += pion + "|";
-			}
-			resultat+="\n";
-		}
-		resultat += "-------------------------";
-		return resultat;
-	}
-	
-	/**
 	 * Permet de changer le joueur qui doit jouer, au changement
 	 * de tour.
 	 */
@@ -90,5 +67,28 @@ public class Modele {
 				&& colonne >= 0 && colonne <= 7
 				&& (couleur == BLANC || couleur == NOIR)
 				&& plateau[ligne][colonne] == RIEN;
+	}
+
+	/**
+	 * Affiche les éléments du plateau.
+	 */
+	@Override
+	public String toString() {
+		String resultat = new String();
+		for (int lignes = 0 ; lignes < getPions().length ; lignes++) {
+			resultat += "-------------------------\n|";
+			for (int colonnes = 0 ; colonnes < getPions()[lignes].length ; colonnes++) {
+				String pion = " ";
+				switch (getPions()[lignes][colonnes]) {
+				case NOIR -> pion =  "⚫";
+				case BLANC -> pion = "⚪";
+				case RIEN -> pion =  "  ";
+				}
+				resultat += pion + "|";
+			}
+			resultat+="\n";
+		}
+		resultat += "-------------------------";
+		return resultat;
 	}
 }
