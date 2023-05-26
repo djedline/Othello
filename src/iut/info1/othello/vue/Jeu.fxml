@@ -13,8 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.info1.othello.vue.Main">
    <children>
       <ImageView fitHeight="451.0" fitWidth="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,7 +26,7 @@
          <children>
             <HBox alignment="TOP_RIGHT" prefHeight="49.0" prefWidth="610.0">
                <children>
-                  <MenuBar prefHeight="50.0" prefWidth="102.0">
+                  <MenuBar prefHeight="50.0" prefWidth="102.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-border-width: 2;">
                      <contextMenu>
                         <ContextMenu>
                           <items>
@@ -40,20 +41,29 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0">
                <children>
-                  <Label text="C'est le tour du joueur" />
+                  <Label text="C'est le tour du joueur">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
                </children>
             </HBox>
             <HBox prefHeight="295.0" prefWidth="600.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="295.0" prefWidth="140.0" spacing="10.0">
                      <children>
-                        <Label text="Joueur 1" />
-                        <Label text="0" />
+                        <Label text="Joueur 1">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                      </children>
                   </VBox>
-                  <VBox prefHeight="295.0" prefWidth="366.0">
+                  <VBox alignment="CENTER" prefHeight="295.0" prefWidth="366.0">
                      <children>
-                        <GridPane style="-fx-grid-lines-visible: true;">
+                        <GridPane maxHeight="280.0" maxWidth="280.0" minHeight="280.0" minWidth="280.0" prefHeight="280.0" prefWidth="280.0" style="-fx-grid-lines-visible: true;">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -75,78 +85,596 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #559f73;" />
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/pion_noir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/pion_blanc.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/pion_blanc.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/pion_noir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-image: images\Case_vide;" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../images/Case_vide.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                         </GridPane>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="295.0" prefWidth="145.0" spacing="10.0">
                      <children>
-                        <Label text="Joueur 2" />
-                        <Label text="0" />
+                        <Label text="Joueur 2">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                      </children>
                   </VBox>
                </children>
