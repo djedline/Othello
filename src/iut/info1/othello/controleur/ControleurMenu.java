@@ -9,6 +9,9 @@ import iut.info1.othello.modele.joueurs.IAFacile;
 import iut.info1.othello.modele.joueurs.JoueurHumain;
 import javafx.fxml.FXML;
 
+/**
+ * Affiche le menu de choix du mode de jeu.
+ */
 public class ControleurMenu {
 
 	public ControleurMenu() {

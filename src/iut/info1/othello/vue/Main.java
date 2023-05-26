@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	
+	/**
+	 * Lance l'écran de jeu
+	 */
 	@Override
 	public void start(Stage stage) throws Exception {
 		
