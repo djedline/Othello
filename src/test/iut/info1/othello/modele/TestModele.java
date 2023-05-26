@@ -5,12 +5,15 @@ import static iut.info1.othello.modele.ContenuCase.NOIR;
 import static iut.info1.othello.modele.ContenuCase.RIEN;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
+import iut.info1.othello.modele.joueurs.JoueurHumain;
 
 class TestModele {
 
@@ -18,7 +21,7 @@ class TestModele {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		initialisé = new Modele();
+		initialisé = new Modele(new JoueurHumain(BLANC), new JoueurHumain(NOIR));
 	}
 
 	@Test
@@ -60,7 +63,23 @@ class TestModele {
 	}
 	
 	@Test
-	void testAjouterPion() {
-		assertEquals(false, initialisé.ajouterPion(0, 0));
+	void testPeutAjouterPion() {
+		// Ne pas ajouter de pion hors du plateau
+		assertFalse(initialisé.peutAjouterPion(-1, -1, NOIR));
+		assertFalse(initialisé.peutAjouterPion(8, 8, NOIR));
+		
+		// Ne pas ajouter de pion sur les existants
+		assertFalse(initialisé.peutAjouterPion(3, 3, NOIR));
+		assertFalse(initialisé.peutAjouterPion(3, 4, NOIR));
+		
+		// Ne pas ajouter de trou
+		assertFalse(initialisé.peutAjouterPion(4, 2, RIEN));
+		
+		// Ajouter un pion proche des autres
+		assertTrue(initialisé.peutAjouterPion(4, 2, NOIR));
+		
+		// Ajouter un pion trop loin des autres
+		//TODO compléter les règles de posage
+		//assertFalse(initialisé.peutAjouterPion(0, 0, NOIR));
 	}
 }
