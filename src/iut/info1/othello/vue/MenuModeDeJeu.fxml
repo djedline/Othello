@@ -6,11 +6,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="30.0">
+      <ImageView fitHeight="451.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/fond_bois.jpg" />
+         </image></ImageView>
+      <VBox alignment="CENTER" layoutY="-20.0" prefHeight="420.0" prefWidth="600.0" spacing="30.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 Joueur" textAlignment="CENTER" wrappingWidth="103.099609375">
                <font>
@@ -19,12 +21,12 @@
             </Text>
             <HBox alignment="CENTER" prefHeight="67.0" prefWidth="600.0" spacing="150.0">
                <children>
-                  <Button mnemonicParsing="false" text="IA Facile">
+                  <Button mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Facile">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="IA Difficile">
+                  <Button mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Difficile">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -37,7 +39,7 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Commencer">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparrent;" text="Commencer">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
