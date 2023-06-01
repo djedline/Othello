@@ -16,7 +16,7 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		
 		FXMLLoader chargeurFXML = new FXMLLoader();
-		chargeurFXML.setLocation(getClass().getResource("Jeu.fxml"));
+		chargeurFXML.setLocation(getClass().getResource("MenuModeDeJeu.fxml"));
 		Parent racine = chargeurFXML.load();
 		Scene scene = new Scene(racine);
 		
