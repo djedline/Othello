@@ -6,9 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
-	xmlns="http://javafx.com/javafx/8" 
-	xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.info1.othello.controleur.ControleurMenu">
    <children>
       <ImageView fitHeight="451.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,12 +21,12 @@
             </Text>
             <HBox alignment="CENTER" prefHeight="67.0" prefWidth="600.0" spacing="150.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Facile">
+                  <Button mnemonicParsing="false" onAction="#creerPartieIAFacile" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Facile">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Difficile">
+                  <Button mnemonicParsing="false" onAction="#creerPartieIADifficile" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparent;" text="IA Difficile">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -41,7 +39,7 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparrent;" text="Commencer">
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#creerPartiePVP" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparrent;" text="Commencer">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
