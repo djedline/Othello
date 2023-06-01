@@ -20,7 +20,7 @@ import iut.info1.othello.modele.joueurs.JoueurHumain;
  */
 class TestModele {
 
-	Modele initialisé;
+	private Modele initialisé;
 
 	@BeforeEach
 	void setUp() throws Exception {

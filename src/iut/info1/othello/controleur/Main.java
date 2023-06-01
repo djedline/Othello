@@ -1,4 +1,6 @@
-package iut.info1.othello.vue;
+package iut.info1.othello.controleur;
+
+import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,20 +10,39 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	
+	public static Stage fenetre;
+	public static Scene sceneMenu;
+	public static Scene sceneMenuModeJeu;
+	public static Scene sceneJeu;
+
 	/**
-	 * Lance l'écran de jeu
+	 * Crée les scènes au sein de la fenêtre de jeu.
 	 */
 	@Override
 	public void start(Stage stage) throws Exception {
-		
+		fenetre = stage;
+		sceneMenu = createScene("../vue/Menu.fxml");
+		sceneMenuModeJeu = createScene("../vue/MenuModeDeJeu.fxml");
+		//sceneJeu = createScene("../vue/Jeu.fxml");
+		fenetre.setTitle("Othello");
+		fenetre.setScene(sceneMenu);
+		fenetre.show();
+	}
+
+	public Scene createScene(String url) throws IOException {
 		FXMLLoader chargeurFXML = new FXMLLoader();
-		chargeurFXML.setLocation(getClass().getResource("Jeu.fxml"));
+		chargeurFXML.setLocation(getClass().getResource(url));
 		Parent racine = chargeurFXML.load();
 		Scene scene = new Scene(racine);
-		
-		stage.setTitle("Othello");
-		stage.setScene(scene);
-		stage.show();
+		return scene;
+	}
+	
+	public static void changerScene(Scene scene) {
+		fenetre.setScene(scene);
+		fenetre.show();
+	}
+
+	public static void main(String[] args) {
+		launch();
 	}
 }

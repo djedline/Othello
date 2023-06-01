@@ -9,7 +9,10 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+		xmlns="http://javafx.com/javafx/19" 
+		xmlns:fx="http://javafx.com/fxml/1"
+		fx:controller="iut.info1.othello.controleur.ControleurMenu">
    <children>
       <ImageView fitHeight="453.0" fitWidth="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -30,17 +33,17 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="281.0" prefWidth="600.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Nouvelle Partie">
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Nouvelle Partie" onAction="#nouvellePartie">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Continuer">
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Continuer" onAction="#continuer">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Aide">
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: transparent; -fx-border-color: #000000;" text="Aide" onAction="#aide">
                      <font>
                         <Font size="19.0" />
                      </font>

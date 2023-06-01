@@ -12,9 +12,10 @@ import javafx.fxml.FXML;
 /**
  * Affiche le menu de choix du mode de jeu.
  */
-public class ControleurMenu {
+public class ControleurMenuModeJeu {
+	
 
-	public ControleurMenu() {
+	public ControleurMenuModeJeu() {
 	}
 	
 	@FXML
