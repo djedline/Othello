@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.info1.othello.vue.ControleurJeu">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.info1.othello.controleur.ControleurJeu">
    <children>
       <ImageView fitHeight="451.0" fitWidth="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="295.0" prefWidth="366.0">
                      <children>
-                        <GridPane fx:id="pane" maxHeight="280.0" maxWidth="280.0" minHeight="280.0" minWidth="280.0" prefHeight="280.0" prefWidth="280.0" style="-fx-grid-lines-visible: true;">
+                        <GridPane fx:id="grille" maxHeight="280.0" maxWidth="280.0" minHeight="280.0" minWidth="280.0" prefHeight="280.0" prefWidth="280.0" style="-fx-grid-lines-visible: true;">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
