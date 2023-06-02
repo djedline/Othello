@@ -68,7 +68,16 @@ public class Modele {
 				&& (couleur == BLANC || couleur == NOIR)
 				&& plateau[ligne][colonne] == RIEN;
 	}
-
+	
+	/**
+	 * Permet de trouver l'ensemble des cases adjacentes (diagonales inclues) au pion qui va être posé
+	 * 
+	 *  
+	 */
+	
+	//TODO faire la fonction
+	
+	
 	/**
 	 * Affiche les éléments du plateau.
 	 */

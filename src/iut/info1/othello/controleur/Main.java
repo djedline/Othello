@@ -21,9 +21,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		fenetre = stage;
-		sceneMenu = createScene("../vue/Menu.fxml");
-		sceneMenuModeJeu = createScene("../vue/MenuModeDeJeu.fxml");
-		//sceneJeu = createScene("../vue/Jeu.fxml");
+		try {
+			sceneMenu = createScene("../vue/Menu.fxml");
+			sceneMenuModeJeu = createScene("../vue/MenuModeDeJeu.fxml");
+			//sceneJeu = createScene("../vue/Jeu.fxml");
+		} catch(Exception e) {
+			
+		}
 		fenetre.setTitle("Othello");
 		fenetre.setScene(sceneMenu);
 		fenetre.show();
