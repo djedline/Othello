@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="35.0" layoutY="37.0" prefHeight="327.0" prefWidth="531.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans le menu d'aide" textAlignment="CENTER" wrappingWidth="173.13671875" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dans ce ce menu vous trouverez toutes les informations nécessaires pour bien apprendre à jouer" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Comment joue-t-on ?" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chacun son tour, les joueurs posent un pion sur le plateau. Pour poser un pion, il faut que un ou " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" plusieurs pions de l'adversaire soient compris entre un de vos pions derrière ceux de votre" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="adversaire et le pion que vous allez poser. Peut importe  la direction (ligne, colonnes, diagonales)." />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" De cette manière les pions de votre adversaire se retourne " />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="pour devenir des pions de votre couleur" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour gagner ?" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous marquez un nombre de points proportionnel au nombre de pions que vous possédez" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour gagner il faut avoir plus de pion de votre couleur sur le plateau que votre adversaire" />
+         </children>
+      </VBox>
+   </children>
+</Pane>
