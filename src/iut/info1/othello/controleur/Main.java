@@ -43,9 +43,13 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		fenetre = stage;
 
-		scenes[0] = createScene("../vue/Menu.fxml");
-		scenes[1] = createScene("../vue/MenuModeDeJeu.fxml");
-		scenes[2] = createScene("../vue/Jeu.fxml");
+		try {
+			scenes[0] = createScene("../vue/Menu.fxml");
+			scenes[1] = createScene("../vue/MenuModeDeJeu.fxml");
+			scenes[2] = createScene("../vue/Jeu.fxml");
+		} catch (Exception e) {
+			System.err.println(e.getMessage());;
+		}
 
 		fenetre.setTitle("Othello");
 		fenetre.setScene(scenes[SCENE_MENU]);
@@ -59,10 +63,18 @@ public class Main extends Application {
 	 * @throws IOException si le fichier ne peut être créé
 	 */
 	public Scene createScene(String urlFXML) throws IOException {
-		FXMLLoader chargeurFXML = new FXMLLoader();
-		chargeurFXML.setLocation(getClass().getResource(urlFXML));
-		Parent racine = chargeurFXML.load();
-		Scene scene = new Scene(racine);
+		Scene scene;
+		try {
+			FXMLLoader chargeurFXML = new FXMLLoader();
+			chargeurFXML.setLocation(getClass().getResource(urlFXML));
+			Parent racine = chargeurFXML.load();
+			scene = new Scene(racine);
+			
+		} catch (Exception e) {
+			throw new IOException("La scène : \"" + urlFXML 
+					+ "\" n'a pas pu être crée.\n"
+					+ e.getStackTrace());
+		}
 		return scene;
 	}
 	
