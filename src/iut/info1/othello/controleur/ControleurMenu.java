@@ -17,8 +17,7 @@ public class ControleurMenu {
 	 */
 	@FXML
 	void aide(ActionEvent event) {
-		System.err.println("Not yet implemented");
-		//TODO
+		Main.changerScene(Main.SCENE_AIDE);
 	}
 
 	/**

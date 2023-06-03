@@ -31,7 +31,12 @@ public class Main extends Application {
 	 */
 	public static final int SCENE_JEU = 2;
 	
-	private static Scene[] scenes = new Scene[3];
+	/** 
+	 * Indice pour la scène du jeu
+	 */
+	public static final int SCENE_AIDE = 3;
+	
+	private static Scene[] scenes = new Scene[4];
 	
 	private static Stage fenetre;
 
@@ -47,6 +52,7 @@ public class Main extends Application {
 			scenes[0] = createScene("../vue/Menu.fxml");
 			scenes[1] = createScene("../vue/MenuModeDeJeu.fxml");
 			scenes[2] = createScene("../vue/Jeu.fxml");
+			scenes[3] = createScene("../vue/Aide.fxml");
 		} catch (Exception e) {
 			System.err.println(e.getMessage());;
 		}
