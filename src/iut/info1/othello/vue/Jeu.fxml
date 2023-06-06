@@ -27,10 +27,10 @@
                <children>
                   <SplitMenuButton mnemonicParsing="false" prefHeight="49.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 2;" text="Menu">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Menu" />
-                      <MenuItem mnemonicParsing="false" text="Aide" />
-                        <MenuItem mnemonicParsing="false" text="Nouvelle Partie" />
-                        <MenuItem mnemonicParsing="false" text="Interrompre partie" />
+                      <MenuItem mnemonicParsing="false" text="Menu" onAction="#backToMenu"/>
+                      <MenuItem mnemonicParsing="false" text="Aide" onAction = "#openAide"/>
+                        <MenuItem mnemonicParsing="false" text="Nouvelle Partie" onAction = "#startNewGame"/>
+                        <MenuItem mnemonicParsing="false" text="Interrompre partie" onAction = "#stopGame"/>
                     </items>
                   </SplitMenuButton>
                </children>

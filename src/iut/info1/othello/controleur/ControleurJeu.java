@@ -1,5 +1,6 @@
 package iut.info1.othello.controleur;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -15,6 +16,42 @@ public class ControleurJeu {
 	@FXML
 	private GridPane grille;
 
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void startNewGame(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+	}
+	
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void stopGame(ActionEvent event) {
+		System.err.println("Not yet implemented");
+	}
+	
+	/**
+	 * Ouvre le Menu d'aide.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void openAide(ActionEvent event) {
+		Main.changerScene(Main.SCENE_AIDE);
+	}
+	
+	/**
+	 * Revient au Menu de choix de mode de jeu.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void backToMenu(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+	}
+	
 	/**
 	 * Crée les écouteurs sur les boutons à l'initialisation du contrôleur.
 	 */

@@ -77,9 +77,9 @@ public class Main extends Application {
 			scene = new Scene(racine);
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new IOException("La scène : \"" + urlFXML 
-					+ "\" n'a pas pu être crée.\n"
-					+ e.getStackTrace());
+					+ "\" n'a pas pu être crée.\n");
 		}
 		return scene;
 	}
