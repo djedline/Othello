@@ -132,4 +132,11 @@ public class Modele {
 		}
 		return toutesCasesPleines;
 	}
+	
+	/**
+	 * @return la joueur dont c'est le tour
+	 */
+	public Joueur getJoueurActuel() {
+		return joueurActuel;
+	}
 }

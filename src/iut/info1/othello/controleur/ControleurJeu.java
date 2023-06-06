@@ -37,9 +37,11 @@ public class ControleurJeu {
 					row = (row == null) ? 0 : row;
 					column = (column == null) ? 0 : column;
 					System.out.printf("Ligne : %d, colonne : %d\n", row, column);
-					if(modele.peutAjouterPion(row, column, ContenuCase.BLANC)) {
-						modele.ajouterPion(row, column);
+					if(modele.peutAjouterPion(row, column, 
+					   modele.getJoueurActuel().getCouleur())) {
+							modele.ajouterPion(row, column);
 					};
+					System.out.println(modele);
 				}
 			});
 		}
