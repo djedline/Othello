@@ -27,7 +27,7 @@ class TestModele {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		initialisé = new Modele(new JoueurHumain(BLANC), new JoueurHumain(NOIR));
+		initialisé = new Modele(new JoueurHumain(1, BLANC), new JoueurHumain(2, NOIR));
 	}
 
 	@Test
