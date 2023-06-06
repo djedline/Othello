@@ -6,6 +6,9 @@ import static iut.info1.othello.modele.ContenuCase.RIEN;
 
 import iut.info1.othello.modele.joueurs.IA;
 import iut.info1.othello.modele.joueurs.Joueur;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  * Représente la logique du jeu. 
@@ -60,7 +63,9 @@ public class Modele {
 	 */
 	public void changerJoueur() {
 		if(isFinJeu()) {
-			// TODO 
+			// TODO récupérer score
+			Joueur gagnant = joueur1;
+			new Alert(AlertType.INFORMATION, joueur1 + " a gagné.", ButtonType.OK);
 		} else {
 			joueurActuel = 
 					(joueurActuel == joueur1) ? joueur2 : joueur1;

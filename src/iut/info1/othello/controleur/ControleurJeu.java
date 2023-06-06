@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
@@ -20,6 +21,11 @@ public class ControleurJeu {
 	
 	/** Le modèle du jeu avec lequel le contrôleur interagit*/
 	private Modele modele;
+	
+
+	/** Affiche le nom du joueur dont c'est le tour */
+    @FXML
+    private Label tourDuJoueur;
 	
 	/**
 	 * Crée le contrôleur de jeu et lui associe un modèle.
@@ -96,5 +102,9 @@ public class ControleurJeu {
 	@FXML
 	private void backToMenu(ActionEvent event) {
 		Main.changerScene(Main.SCENE_MENU);
+	}
+	
+	private void updateTourDuJoueur() {
+		tourDuJoueur.setText("C'est le tour du joueur " + modele.getJoueurActuel().getNom());
 	}
 }

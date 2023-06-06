@@ -11,8 +11,8 @@ import iut.info1.othello.modele.Modele;
  */
 public class IA extends Joueur {
 
-	public IA(ContenuCase couleur) {
-		super(couleur);
+	public IA(int i, ContenuCase couleur) {
+		super(i, couleur);
 	}
 	
 	public void jouer(Modele modele) {

@@ -15,9 +15,8 @@ public class IAFacile extends IA {
 	 * Crée une IA facile.
 	 * @param couleur la couleur de pion associée.
 	 */
-	public IAFacile(ContenuCase couleur) {
-		super(couleur);
-		System.out.println("Je suis une IA facile");
+	public IAFacile(int i, ContenuCase couleur) {
+		super(i, couleur);
 	}
 	
 	@Override

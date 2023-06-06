@@ -12,12 +12,12 @@ public class Joueur {
 	/**
 	 * Nom du joueur, défini par avance.
 	 */
-	private String nom;
+	protected String nom;
 	
 	/**
 	 * La couleur de pion associée au joueur. Ne peut être RIEN.
 	 */
-	private iut.info1.othello.modele.ContenuCase couleur;
+	private ContenuCase couleur;
 
 	/**
 	 * Crée un joueur assigné à une couleur de pion.
@@ -25,12 +25,13 @@ public class Joueur {
 	 * @throws IllegalArgumentException si la couleur passée en paramètre
 	 * est RIEN.
 	 */
-	public Joueur(iut.info1.othello.modele.ContenuCase couleur) {
+	public Joueur(int i, ContenuCase couleur) {
 		if (couleur == RIEN) {
 			throw new IllegalArgumentException("Un joueur ne peut "
 					+ "poser des cases vides.");
 		}
 		this.couleur = couleur;
+		this.nom = "Joueur " + i;
 	}
 
 	/**
