@@ -136,6 +136,8 @@ public class Main extends Application {
 		try {
 			Scene scene = createScene("../vue/Aide.fxml", 
 				new ControleurAide(fenetre.getScene()));
+			scene.getStylesheets().add(
+					Main.class.getResource("../vue/all.css").toExternalForm());
 			changerScene(scene);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());

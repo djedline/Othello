@@ -1,0 +1,11 @@
+Button.blanc {
+	-fx-background-color: white;
+}
+
+Button.noir {
+	-fx-background-color: black;
+}
+
+Button.plateau-case {
+	-fx-background-color: green;	
+}
