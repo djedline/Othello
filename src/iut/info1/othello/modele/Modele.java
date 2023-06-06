@@ -37,6 +37,11 @@ public class Modele {
 		plateau[4][4] = NOIR;
 		plateau[3][4] = BLANC;
 		plateau[4][3] = BLANC;
+		
+		this.joueur1 = j1;
+		this.joueur2 = j2;
+		
+		joueurActuel = joueur1;
 	}
 
 	/**
@@ -72,7 +77,7 @@ public class Modele {
 	 * @param colonne la colonne où ajouter le pion (de 0 à 7)
 	 */
 	public void ajouterPion(int ligne, int colonne) {
-		changerJoueur();
+		plateau[ligne][colonne] = joueurActuel.getCouleur();
 	}
 
 	public boolean peutAjouterPion(int ligne, int colonne, ContenuCase couleur) {

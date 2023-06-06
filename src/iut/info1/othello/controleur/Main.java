@@ -1,7 +1,9 @@
 package iut.info1.othello.controleur;
 
 import java.io.IOException;
+import java.net.URL;
 
+import iut.info1.othello.modele.Modele;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,12 +31,7 @@ public class Main extends Application {
 	/** 
 	 * Indice pour la scène du jeu
 	 */
-	public static final int SCENE_JEU = 2;
-	
-	/** 
-	 * Indice pour la scène du jeu
-	 */
-	public static final int SCENE_AIDE = 3;
+	public static final int SCENE_AIDE = 2;
 	
 	private static Scene[] scenes = new Scene[4];
 	
@@ -51,8 +48,7 @@ public class Main extends Application {
 		try {
 			scenes[0] = createScene("../vue/Menu.fxml");
 			scenes[1] = createScene("../vue/MenuModeDeJeu.fxml");
-			scenes[2] = createScene("../vue/Jeu.fxml");
-			scenes[3] = createScene("../vue/Aide.fxml");
+			scenes[2] = createScene("../vue/Aide.fxml");
 		} catch (Exception e) {
 			System.err.println(e.getMessage());;
 		}
@@ -72,7 +68,33 @@ public class Main extends Application {
 		Scene scene;
 		try {
 			FXMLLoader chargeurFXML = new FXMLLoader();
-			chargeurFXML.setLocation(getClass().getResource(urlFXML));
+			URL resource = Main.class.getResource(urlFXML);
+			chargeurFXML.setLocation(resource);
+			Parent racine = chargeurFXML.load();
+			scene = new Scene(racine);
+			
+		} catch (Exception e) {
+			throw new IOException("La scène : \"" + urlFXML 
+					+ "\" n'a pas pu être crée.\n"
+					+ e.getStackTrace());
+		}
+		return scene;
+	}
+	
+	/**
+	 * Crée une scène à partir de l'URL de son fichier fxml.
+	 * @param urlFXML l'url relative à ce fichier du fichier FXML
+	 * @return la scene issue de ce fichier
+	 * @throws IOException si le fichier ne peut être créé
+	 */
+	private static Scene createScene(String urlFXML, Object controller) 
+			throws IOException {
+		Scene scene;
+		try {
+			FXMLLoader chargeurFXML = new FXMLLoader();
+			URL resource = Main.class.getResource(urlFXML);
+			chargeurFXML.setLocation(resource);
+			chargeurFXML.setController(controller);
 			Parent racine = chargeurFXML.load();
 			scene = new Scene(racine);
 			
@@ -95,6 +117,21 @@ public class Main extends Application {
 			throw new IllegalArgumentException();
 		}
 		changerScene(scenes[numeroScene]);
+	}
+	
+	/**
+	 * Permet de charger la scène de jeu principal.
+	 * @param modele le modèle de la scène à créer
+	 */
+	public static void changerSceneJeu(Modele modele) {
+		try {
+			Scene scene = createScene("../vue/Jeu.fxml", 
+				new ControleurJeu(modele));
+			changerScene(scene);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
 	}
 	
 	/**

@@ -1,5 +1,8 @@
 package iut.info1.othello.controleur;
 
+
+import iut.info1.othello.modele.ContenuCase;
+import iut.info1.othello.modele.Modele;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,6 +18,12 @@ public class ControleurJeu {
 	/** correspond à la grille du plateau */
 	@FXML
 	private GridPane grille;
+	
+	private Modele modele;
+	
+	public ControleurJeu(Modele modele) {
+		this.modele = modele;
+	}
 
 	/**
 	 * Revient au Menu pricipal.
@@ -65,8 +74,10 @@ public class ControleurJeu {
 					Integer column = grille.getColumnIndex(child);
 					row = (row == null) ? 0 : row;
 					column = (column == null) ? 0 : column;
-					System.out.println("Ligne : " + row + ", colonne : " + column);
-					//TODO démerde toi pour appeler le modèle
+					System.out.printf("Ligne : %d, colonne : %d\n", row, column);
+					if(modele.peutAjouterPion(row, column, ContenuCase.BLANC)) {
+						modele.ajouterPion(row, column);
+					};
 				}
 			});
 		}

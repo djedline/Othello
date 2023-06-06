@@ -31,9 +31,9 @@ public class IAFacile extends IA {
 			colonne = (int) Math.random() * 8;
 			peutAjouterPion = modele.peutAjouterPion(ligne, colonne, getCouleur());
 		} while (!peutAjouterPion && nbEchecs < 200);
-		if (nbEchecs == 200) {
-			modele.changerJoueur();
+		if (peutAjouterPion) {
+			modele.ajouterPion(ligne, colonne);
 		}
-		modele.ajouterPion(ligne, colonne);
+		modele.changerJoueur();
 	}
 }

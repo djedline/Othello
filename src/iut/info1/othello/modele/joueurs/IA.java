@@ -8,7 +8,6 @@ import iut.info1.othello.modele.Modele;
  * @author BAUDROIT Leïla
  * @author BOYER Djedline
  * @author BRIOT Nael
- *
  */
 public class IA extends Joueur {
 
