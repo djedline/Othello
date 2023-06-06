@@ -1,7 +1,6 @@
 package iut.info1.othello.controleur;
 
 
-import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,46 +18,15 @@ public class ControleurJeu {
 	@FXML
 	private GridPane grille;
 	
+	/** Le modèle du jeu avec lequel le contrôleur interagit*/
 	private Modele modele;
 	
+	/**
+	 * Crée le contrôleur de jeu et lui associe un modèle.
+	 * @param modele le modèle associé, avec des joueurs différents.
+	 */
 	public ControleurJeu(Modele modele) {
 		this.modele = modele;
-	}
-
-	/**
-	 * Revient au Menu pricipal.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	void startNewGame(ActionEvent event) {
-		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
-	}
-	
-	/**
-	 * Revient au Menu pricipal.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	void stopGame(ActionEvent event) {
-		System.err.println("Not yet implemented");
-	}
-	
-	/**
-	 * Ouvre le Menu d'aide.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	void openAide(ActionEvent event) {
-		Main.changerSceneAide();
-	}
-	
-	/**
-	 * Revient au Menu de choix de mode de jeu.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	void backToMenu(ActionEvent event) {
-		Main.changerScene(Main.SCENE_MENU);
 	}
 	
 	/**
@@ -83,5 +51,50 @@ public class ControleurJeu {
 				}
 			});
 		}
+	}
+
+	/**
+	 * Permet au joueur de passer son tour.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void passerTour(ActionEvent event) {
+		modele.changerJoueur();
+	}
+
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void startNewGame(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+	}
+	
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void stopGame(ActionEvent event) {
+		System.err.println("Not yet implemented");
+	}
+	
+	/**
+	 * Ouvre le Menu d'aide.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void openAide(ActionEvent event) {
+		Main.changerSceneAide();
+	}
+	
+	/**
+	 * Revient au Menu de choix de mode de jeu.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void backToMenu(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU);
 	}
 }
