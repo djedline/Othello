@@ -5,7 +5,7 @@ import iut.info1.othello.modele.ContenuCase;
 /**
  * Représente une IA difficile.
  */
-public class IADifficile extends Joueur {
+public class IADifficile extends IA {
 	
 	/**
 	 * Crée une IA difficile.
