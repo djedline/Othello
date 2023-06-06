@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="451.0" fitWidth="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,12 +30,12 @@
          <children>
             <HBox alignment="TOP_RIGHT" prefHeight="49.0" prefWidth="610.0">
                <children>
-                  <SplitMenuButton mnemonicParsing="false" prefHeight="49.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 2;" text="Menu">
+                  <SplitMenuButton mnemonicParsing="false" prefHeight="49.0" prefWidth="94.0" onAction="#MenuDeroulant" style="-fx-background-color: Transparent; -fx-border-color: black; -fx-border-width: 2;" text="Menu">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Menu" onAction="#backToMenu"/>
-                      <MenuItem mnemonicParsing="false" text="Aide" onAction = "#openAide"/>
-                        <MenuItem mnemonicParsing="false" text="Nouvelle Partie" onAction = "#startNewGame"/>
-                        <MenuItem mnemonicParsing="false" text="Interrompre partie" onAction = "#stopGame"/>
+                      <MenuItem mnemonicParsing="false" onAction="#backToMenu" text="Menu" />
+                      <MenuItem mnemonicParsing="false" onAction="#openAide" text="Aide" />
+                        <MenuItem mnemonicParsing="false" onAction="#startNewGame" text="Nouvelle Partie" />
+                        <MenuItem mnemonicParsing="false" onAction="#stopGame" text="Interrompre partie" />
                     </items>
                   </SplitMenuButton>
                </children>

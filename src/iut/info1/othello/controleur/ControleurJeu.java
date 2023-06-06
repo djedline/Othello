@@ -24,6 +24,14 @@ public class ControleurJeu {
 	public ControleurJeu(Modele modele) {
 		this.modele = modele;
 	}
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void MenuDeroulant(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU);
+	}
 
 	/**
 	 * Revient au Menu pricipal.
