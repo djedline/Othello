@@ -28,6 +28,7 @@ class PlateauTest {
     private ContenuCase[][] plateau = new ContenuCase[8][8];
     private Plateau plateauTest;
     private Plateau plateauTestInitial;
+    private Plateau testPlateauDiagonal;
 
     /** TODO comment method role
      * @throws java.lang.Exception
@@ -44,6 +45,7 @@ class PlateauTest {
         plateau[3][4] = BLANC;
         plateau[4][3] = BLANC;
         plateauTestInitial = new Plateau();
+        testPlateauDiagonal = new Plateau();
     }
 
     /**
@@ -66,9 +68,9 @@ class PlateauTest {
      * Test method for {@link iut.info1.othello.modele.Plateau#autorisePosage(int, int, iut.info1.othello.modele.ContenuCase)}.
      */
     @Test
-    void testAutorisePosage() {
+    void testAutorisePosagePerpendiculaire() {
         // test pions noirs
-        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,3,NOIR));
+        //assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,3,NOIR));
         assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(3,5,NOIR));
         assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,6,NOIR));
         assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,7,NOIR));
@@ -83,7 +85,13 @@ class PlateauTest {
         
         // test pions
     }
-    
+    /**
+     * Test method for {@link iut.info1.othello.modele.Plateau#autorisePosage(int, int, iut.info1.othello.modele.ContenuCase)}.
+     */
+    @Test
+    void testAutorisePosageDiagonal() {
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,3,NOIR));
+    }
     /**
      * Test method for {@link iut.info1.othello.modele.Plateau#modificationTableau(int, int, iut.info1.othello.modele.getCaseVide)}.
      */
@@ -98,8 +106,13 @@ class PlateauTest {
     @Test
     void testSetTableau() {
         assertThrows(IllegalArgumentException.class,()-> plateauTestInitial.setTableau(3,3,NOIR));
-        //assertEquals("posé", plateauTestInitial.setTableau(5,3,NOIR));
-        //System.out.println(plateauTest.comparePosage(3,3,NOIR));
+        plateau[2][4] = NOIR;
+        plateau[3][4] = NOIR;
+        plateauTestInitial.setTableau(2, 4, NOIR);
+        assertArrayEquals(plateau,plateauTestInitial.getPlateau());
+        plateau[4][5] = BLANC;
+        plateauTestInitial.setTableau(4, 5, BLANC);
+        assertArrayEquals(plateau,plateauTestInitial.getPlateau());
     }
     
     /**

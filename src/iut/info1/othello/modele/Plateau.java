@@ -16,14 +16,20 @@ import static iut.info1.othello.modele.ContenuCase.RIEN;
  */
 public class Plateau {
 
-    private ContenuCase[][] plateau = new ContenuCase[8][8];
+    private ContenuCase[][] plateau;
     private ContenuCase[][]tableauPosition;
+    private boolean haut;
+    private boolean bas;
+    private boolean droite;
+    private boolean gauche;
+    private int index;
 
     /** 
      * Créer un plateau d'othello
      * et l'initialise
      */
     public Plateau() {
+        plateau = new ContenuCase[8][8];
         for (int lignes = 0 ; lignes < plateau.length ; lignes++) {
             for (int colonnes = 0 ; colonnes < plateau[lignes].length ; colonnes++) {
                 plateau[lignes][colonnes] = RIEN;
@@ -53,6 +59,7 @@ public class Plateau {
      */
     public boolean comparePosage(int ligne, int colonne, ContenuCase couleur) {
         positionPossible(couleur);
+        System.out.println(tableauPosition[ligne][colonne] == couleur);
         return tableauPosition[ligne][colonne] == couleur;
 
     }
@@ -64,17 +71,24 @@ public class Plateau {
      */
     public void positionPossible(ContenuCase couleurPion) {
         tableauPosition = new ContenuCase[8][8];
+        String resultat;
+        resultat = "";
         for (int lignes = 0 ; lignes < tableauPosition.length ; lignes++) {
             for (int colonnes = 0 ; colonnes < tableauPosition[lignes].length ; colonnes++) {
                 if (plateau[lignes][colonnes] == RIEN) {
                     if (autorisePosagePerpendiculaire(lignes, colonnes, couleurPion)) {
                         tableauPosition[lignes][colonnes] = couleurPion;
-                    } 
+                    } else {
+                        tableauPosition[lignes][colonnes] = null;
+                    }
                 } else {
                     tableauPosition[lignes][colonnes] = RIEN;
                 }
+                resultat += tableauPosition[lignes][colonnes] + ", ";
             }
+            resultat += "\n";
         } 
+        System.out.println(resultat);
     }
 
     /** 
@@ -89,12 +103,13 @@ public class Plateau {
     public boolean autorisePosagePerpendiculaire(int ligne, int colonne, ContenuCase couleur) {
         boolean posagePossible = false;
         ContenuCase couleurAdversaire;
+        int index;
         if (couleur == NOIR) {
             couleurAdversaire = BLANC;
         } else {
             couleurAdversaire = NOIR;
         }
-
+        index = 0;
         if(ligne == 7 && plateau[ligne-1][colonne] == couleurAdversaire) {
             posagePossible = true;
         } else if (colonne == 7 && plateau[ligne][colonne-1] == couleurAdversaire){
@@ -105,25 +120,56 @@ public class Plateau {
             posagePossible = true; 
         } else if(ligne != 7 && colonne != 7){
             if ( ligne != 0 && plateau[ligne-1][colonne] == couleurAdversaire) {
-                for(int haut = ligne; haut > 0 && plateau[haut][colonne] != couleur; haut--) {
-                    posagePossible = true;
+                for(index = ligne; index > 0 && plateau[index][colonne] != couleur ; index--) {
+                    posagePossible = plateau[ligne-1][colonne] != RIEN;
                 }
+                haut = plateau[index][colonne] == couleur;
             }
+            index = 0;
             if (plateau[ligne+1][colonne] == couleurAdversaire && ligne != 7) {
-                for(int bas = ligne; bas < 7 && plateau[bas][colonne] != couleur; bas++) {
+                for(index = ligne+1; index < 7 && plateau[index][colonne] != couleur; index++) {
                     posagePossible = true;
                 }
+                bas = plateau[index][colonne] == couleur;
             }
-            if (plateau[ligne][colonne+1] == couleurAdversaire && colonne != 7) {
-                for(int droite = colonne; droite < 7 && plateau[ligne][droite] != couleur; droite++) {
+            index = 0;
+            if (plateau[ligne][colonne+1] == couleurAdversaire && colonne != 7 ) {
+                for(index = colonne+1; index < 7 && plateau[ligne][index] != couleur ; index++) {
+                    posagePossible = true;
+                    System.out.println(plateau[ligne][index]);
+                }
+                droite = plateau[ligne][index] == couleur;
+            }
+            index = 0;
+            if ( colonne != 0 && plateau[ligne][colonne-1] == couleurAdversaire ) {
+                for(index = colonne; index > 0 && plateau[ligne][index] != couleur; index--) {
                     posagePossible = true;
                 }
+                //System.out.println(plateau[ligne][index]);
+                gauche = plateau[ligne][index] == couleur;
+                System.out.println("\t" + haut + "\n" + gauche + "\t\t" + droite + "\n\t" + bas); 
             }
-            if ( colonne != 0 && plateau[ligne][colonne-1] == couleurAdversaire) {
-                for(int gauche = colonne; gauche > 0 && plateau[ligne][gauche] != couleur; gauche--) {
-                    posagePossible = true;
-                }
-            }
+        }
+        return posagePossible;
+
+    }
+
+    /** 
+     * Permet de vérifer les conditions de pose pour un pion d'une couleur donnée
+     * Vérifie les conditions de pose vertical et horizontal
+     * @param ligne la ligne du plateau où le pion doit être posé
+     * @param colonne la colonne du tableau où le pion doit être posé
+     * @param couleur la couleur du pion qui doit être posé 
+     * @return true si l'utilisateur peut poser
+     *         false sinon
+     */
+    public boolean autorisePosageDiagonal(int ligne, int colonne, ContenuCase couleur) {
+        boolean posagePossible = false;
+        ContenuCase couleurAdversaire;
+        if (couleur == NOIR) {
+            couleurAdversaire = BLANC;
+        } else {
+            couleurAdversaire = NOIR;
         }
         return posagePossible;
 
@@ -136,18 +182,55 @@ public class Plateau {
      * @param ligne la ligne du plateau où le pion doit être posé
      * @param colonne la colonne du tableau où le pion doit être posé
      * @param couleur la couleur du pion qui doit être posé 
-     * @return un message indiquant que le pion a bien était posé
      * @throws IllegalArgumentException() si l'utilisateur ne peut pas poser
      */
-    public String setTableau(int ligne, int colonne, ContenuCase couleur) {
+    public void setTableau(int ligne, int colonne, ContenuCase couleur) {
         if(comparePosage(ligne, colonne, couleur)) {
             plateau[ligne][colonne] = couleur;
+            changementPion(ligne, colonne, couleur);
         } else {
             throw new IllegalArgumentException();
         }
-        return "Posé";
     }
 
+    /** 
+     * @param ligne 
+     * @param colonne 
+     * @param couleur 
+     * 
+     */
+    public void changementPion(int ligne, int colonne, ContenuCase couleur) {
+        System.out.println(ligne);
+        haut = ligne !=0 && plateau[ligne-1][colonne] != RIEN ? true : false;
+        bas = ligne !=7 && plateau[ligne+1][colonne] != RIEN ? true : false;
+        droite = colonne !=7 && plateau[ligne][colonne+1] != RIEN ? true : false;
+        gauche = colonne !=0 && plateau[ligne][colonne-1] != RIEN ? true : false;
+        System.out.println(plateau[ligne][colonne-1]);
+        if (haut) {
+            for (int index = ligne-1; plateau[index][colonne] != couleur; index--) {
+                plateau[index][colonne] = couleur == NOIR ? NOIR : BLANC;
+                System.out.println("haut : " + plateau[index][colonne]);
+            }
+        }
+        if (bas) {
+            for (int index = ligne+1; plateau[index][colonne] != couleur; index++) {
+                plateau[index][colonne] = couleur == NOIR ? NOIR : BLANC;
+                System.out.println("bas : " + plateau[index][colonne]);
+            }
+        }
+        if (droite) {
+            for (int index = colonne+1; plateau[ligne][index] != couleur; index++) {
+                plateau[index][colonne] = couleur == NOIR ? NOIR : BLANC;
+                System.out.println("droite : " + plateau[ligne][index]);
+            }
+        }
+        if (gauche) {
+            for (int index = colonne-1; plateau[ligne][index] != couleur; index--) {
+                plateau[index][colonne] = couleur == NOIR ? NOIR : BLANC;
+                System.out.println("gauche : " + plateau[ligne][index]+"\n");
+            }
+        }
+    }
     /** 
      * Permet de connaître le nombre de pions noir présent sur plateau
      * @return le nombre de pions de couleur noir présent sur le plateau
