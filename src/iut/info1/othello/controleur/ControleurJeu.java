@@ -54,11 +54,21 @@ public class ControleurJeu {
 							modele.ajouterPion(row, column);
 					};
 					System.out.println(modele);
+					updateTourDuJoueur();
 				}
 			});
 		}
 	}
 
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	private void menuDeroulant(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU);
+	}
+	
 	/**
 	 * Permet au joueur de passer son tour.
 	 * @param event l'évènement déclenché
