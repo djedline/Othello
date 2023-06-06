@@ -17,23 +17,23 @@ import javafx.stage.Stage;
  * @author BRIOT Nael
  */
 public class Main extends Application {
-	
+
 	/** 
 	 * Indice pour la scène du menu principal
 	 */
 	public static final int SCENE_MENU = 0;
-	
+
 	/** 
 	 * Indice pour la scène du menu de choix du mode de jeu
 	 */
 	public static final int SCENE_MENU_MODE_JEU = 1;
-	
+
 	/** 
 	 * Indice pour la scène du jeu
 	 */
-	
+
 	private static Scene[] scenes = new Scene[2];
-	
+
 	private static Stage fenetre;
 
 	/**
@@ -55,7 +55,6 @@ public class Main extends Application {
 		fenetre.setScene(scenes[SCENE_MENU]);
 		fenetre.show();
 	}
-
 	/**
 	 * Crée une scène à partir de l'URL de son fichier fxml.
 	 * @param urlFXML l'url relative à ce fichier du fichier FXML
@@ -70,7 +69,7 @@ public class Main extends Application {
 			chargeurFXML.setLocation(resource);
 			Parent racine = chargeurFXML.load();
 			scene = new Scene(racine);
-			
+
 		} catch (Exception e) {
 			throw new IOException("La scène : \"" + urlFXML 
 					+ "\" n'a pas pu être crée.\n"
@@ -78,7 +77,7 @@ public class Main extends Application {
 		}
 		return scene;
 	}
-	
+
 	/**
 	 * Crée une scène à partir de l'URL de son fichier fxml.
 	 * @param urlFXML l'url relative à ce fichier du fichier FXML
@@ -95,7 +94,7 @@ public class Main extends Application {
 			chargeurFXML.setController(controller);
 			Parent racine = chargeurFXML.load();
 			scene = new Scene(racine);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("La scène : \"" + urlFXML 
@@ -103,7 +102,7 @@ public class Main extends Application {
 		}
 		return scene;
 	}
-	
+
 	/**
 	 * Change la scène affichée dans la fenêtre par celle
 	 * dont le numéro est indiqué en paramètre. Voir constantes
@@ -116,7 +115,7 @@ public class Main extends Application {
 		}
 		changerScene(scenes[numeroScene]);
 	}
-	
+
 	/**
 	 * Permet de charger la scène de jeu principal.
 	 * @param modele le modèle de la scène à créer
@@ -124,27 +123,27 @@ public class Main extends Application {
 	public static void changerSceneJeu(Modele modele) {
 		try {
 			Scene scene = createScene("../vue/Jeu.fxml", 
-				new ControleurJeu(modele));
+					new ControleurJeu(modele));
 			changerScene(scene);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		
+
 	}
-	
+
 	public static void changerSceneAide() {
 		try {
 			Scene scene = createScene("../vue/Aide.fxml", 
-				new ControleurAide(fenetre.getScene()));
+					new ControleurAide(fenetre.getScene()));
 			scene.getStylesheets().add(
 					Main.class.getResource("../vue/all.css").toExternalForm());
 			changerScene(scene);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		
+
 	}
-	
+
 	/**
 	 * Change la scène affichée dans la fenêtre par celle passée en paramètre
 	 * et l'affiche

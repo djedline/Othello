@@ -68,18 +68,18 @@ class PlateauTest {
     @Test
     void testAutorisePosage() {
         // test pions noirs
-        assertFalse(plateauTestInitial.autorisePosage(3,3,NOIR));
-        assertTrue(plateauTestInitial.autorisePosage(3,5,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(3,6,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(3,7,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(3,2,NOIR));
-        assertTrue(plateauTestInitial.autorisePosage(4,2,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(4,5,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(4,1,NOIR));
-        assertTrue(plateauTestInitial.autorisePosage(2,4,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(5,4,NOIR));
-        assertTrue(plateauTestInitial.autorisePosage(5,3,NOIR));
-        assertFalse(plateauTestInitial.autorisePosage(2,3,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,3,NOIR));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(3,5,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,6,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,7,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,2,NOIR));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(4,2,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(4,5,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(4,1,NOIR));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(2,4,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(5,4,NOIR));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(5,3,NOIR));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(2,3,NOIR));
         
         // test pions
     }

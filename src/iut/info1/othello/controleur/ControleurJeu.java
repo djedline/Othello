@@ -1,26 +1,15 @@
 package iut.info1.othello.controleur;
 
-
-import static iut.info1.othello.modele.ContenuCase.BLANC;
-import static iut.info1.othello.modele.ContenuCase.RIEN;
-
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 
 /** 
  * Contrôleur de la scène de jeu.
@@ -138,38 +127,21 @@ public class ControleurJeu {
 	 * @throws IllegalArgumentException si la couleur du pion est invalide.
 	 */
 	protected void changerPion(Node bouton, ContenuCase couleur) {
-		if (couleur == RIEN) {
+		if (couleur == ContenuCase.RIEN) {
 			throw new IllegalArgumentException("Impossible d'ajouter un pion vide");
 		}
 		String cssColor;
 		//String url;
-		if (couleur == BLANC) {
+		if (couleur == ContenuCase.BLANC) {
 			cssColor = "blanc";
-			/*
-			url = ControleurJeu.class.getResource(
-					"../../../../../../images/pion_noir.png").toExternalForm();
-					
-					*/
 		} else {
 			cssColor = "noir";
-			/*
-			url = ControleurJeu.class.getResource(
-					"../../../../../../images/pion_blanc.png").toExternalForm();
-					*/
 		}
-		//Image imagePion = new Image(url);
 		if (bouton instanceof Button) {
 			Button clicked = (Button) bouton;
 			clicked.getStyleClass().remove("plateau-case");
 			clicked.getStyleClass().add(cssColor);
 			clicked.applyCss();
-			/*
-			BackgroundImage bg = new BackgroundImage(imagePion, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
-							BackgroundPosition.CENTER, null);
-			Platform.runLater(() -> clicked.getStyleClass().add("blanc"));
-			clicked.setBackground(Background.fill(new Color(0.1, 0.1, 0.1, 1)));
-			*/
-		
 		}
 	}
 }
