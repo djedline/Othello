@@ -19,7 +19,6 @@ public class ControleurJeu {
 
 	@FXML
 	public void initialize() {
-		System.out.println("TEST");
 		for (Node child : grille.getChildren()) {
 			child.setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override

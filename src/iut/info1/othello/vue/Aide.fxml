@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1 fx:controller="iut.info1.othello.controleur.ControleurAide">
    <children>
+      <ImageView fitHeight="452.0" fitWidth="603.0" layoutX="-3.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/fond_bois.jpg" />
+         </image>
+      </ImageView>
       <VBox alignment="TOP_CENTER" layoutX="35.0" layoutY="37.0" prefHeight="327.0" prefWidth="531.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans le menu d'aide" textAlignment="CENTER" wrappingWidth="173.13671875" />
@@ -27,5 +34,6 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour gagner il faut avoir plus de pion de votre couleur sur le plateau que votre adversaire" />
          </children>
       </VBox>
+      <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 3;" text="Retour" />
    </children>
 </Pane>
