@@ -1,25 +1,25 @@
 package iut.info1.othello.controleur;
 
-import iut.info1.othello.modele.Modele;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
-/** TODO comment class responsibility (SRP)
- * @author Djed
- *
+/** 
+ * Contrôleur de la scène de jeu.
  */
 public class ControleurJeu {
 
-	/** créer un gridpane */
+	/** correspond à la grille du plateau */
 	@FXML
 	private GridPane grille;
 
+	/**
+	 * Crée les écouteurs sur les boutons à l'initialisation du contrôleur.
+	 */
 	@FXML
 	public void initialize() {
-		System.out.println("TEST");
 		for (Node child : grille.getChildren()) {
 			child.setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
@@ -34,18 +34,4 @@ public class ControleurJeu {
 			});
 		}
 	}
-	
-	void click(MouseEvent event) {
-		Node node;
-		try {
-			System.out.println(event.getTarget());
-			node = (Node) event.getTarget();
-			System.out.println(grille);
-			System.out.println(grille.getRowIndex(node));
-			System.out.println(grille.getColumnIndex(node));
-		} catch (Exception e) {
-			System.out.println("Le clic n'a pas pu être pris en compte.");
-		}
-	}
-
 }

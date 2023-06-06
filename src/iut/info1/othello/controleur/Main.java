@@ -68,7 +68,7 @@ public class Main extends Application {
 	 * @return la scene issue de ce fichier
 	 * @throws IOException si le fichier ne peut être créé
 	 */
-	public Scene createScene(String urlFXML) throws IOException {
+	private Scene createScene(String urlFXML) throws IOException {
 		Scene scene;
 		try {
 			FXMLLoader chargeurFXML = new FXMLLoader();

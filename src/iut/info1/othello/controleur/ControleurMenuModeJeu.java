@@ -21,7 +21,7 @@ public class ControleurMenuModeJeu {
 	 * Lance une partie entre joueurs humains et affiche l'écran de jeu.
 	 */
 	@FXML
-	public void creerPartiePVP() {
+	private void creerPartiePVP() {
 		new Modele(new JoueurHumain(BLANC), new JoueurHumain(NOIR));
 		Main.changerScene(Main.SCENE_JEU);
 	}
@@ -30,7 +30,7 @@ public class ControleurMenuModeJeu {
 	 * Lance une partie avec une IA facile et affiche l'écran de jeu.
 	 */
 	@FXML
-	public void creerPartieIAFacile() {
+	private void creerPartieIAFacile() {
 		new Modele(new JoueurHumain(BLANC), new IAFacile(NOIR));
 		Main.changerScene(Main.SCENE_JEU);
 	}
@@ -39,7 +39,7 @@ public class ControleurMenuModeJeu {
 	 * Lance une partie avec une IA difficile et affiche l'écran de jeu.
 	 */
 	@FXML
-	public void creerPartieIADifficile() {
+	private void creerPartieIADifficile() {
 		new Modele(new JoueurHumain(BLANC), new IADifficile(NOIR));
 		Main.changerScene(Main.SCENE_JEU);
 	}
