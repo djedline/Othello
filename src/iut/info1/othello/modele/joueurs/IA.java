@@ -11,6 +11,9 @@ import iut.info1.othello.modele.Modele;
  */
 public class IA extends Joueur {
 
+	/**
+	 * @see {@code iut.info1.othello.modele.joueurs.Joueur#Joueur(int, ContenuCase)}
+	 */
 	public IA(int i, ContenuCase couleur) {
 		super(i, couleur);
 	}

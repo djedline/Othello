@@ -10,7 +10,7 @@ import iut.info1.othello.modele.ContenuCase;
 public class Joueur {
 
 	/**
-	 * Nom du joueur, défini par avance.
+	 * Nom du joueur.
 	 */
 	protected String nom;
 	
@@ -22,6 +22,7 @@ public class Joueur {
 	/**
 	 * Crée un joueur assigné à une couleur de pion.
 	 * @param couleur la couleur de pion associée.
+	 * @param i l'indice du joueur
 	 * @throws IllegalArgumentException si la couleur passée en paramètre
 	 * est RIEN.
 	 */

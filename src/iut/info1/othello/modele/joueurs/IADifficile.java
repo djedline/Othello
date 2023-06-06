@@ -9,6 +9,7 @@ public class IADifficile extends IA {
 	
 	/**
 	 * Crée une IA difficile.
+	 * @param i l'indice du joueur
 	 * @param couleur la couleur de pion qui lui est associée.
 	 */
 	public IADifficile(int i, ContenuCase couleur) {

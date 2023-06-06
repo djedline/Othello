@@ -9,6 +9,7 @@ public class JoueurHumain extends Joueur {
 
 	/**
 	 * Crée un joueur humain.
+	 * @param i l'indice du joueur
 	 * @param couleur la couleur de pion associée.
 	 */
 	public JoueurHumain(int i, ContenuCase couleur) {

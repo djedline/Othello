@@ -13,6 +13,7 @@ public class IAFacile extends IA {
 	
 	/**
 	 * Crée une IA facile.
+	 * @param i l'indice du joueur
 	 * @param couleur la couleur de pion associée.
 	 */
 	public IAFacile(int i, ContenuCase couleur) {
