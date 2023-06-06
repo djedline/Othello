@@ -1,7 +1,9 @@
 package iut.info1.othello.controleur;
 
+
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -23,6 +25,42 @@ public class ControleurJeu {
 		this.modele = modele;
 	}
 
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void startNewGame(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+	}
+	
+	/**
+	 * Revient au Menu pricipal.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void stopGame(ActionEvent event) {
+		System.err.println("Not yet implemented");
+	}
+	
+	/**
+	 * Ouvre le Menu d'aide.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void openAide(ActionEvent event) {
+		Main.changerSceneAide();
+	}
+	
+	/**
+	 * Revient au Menu de choix de mode de jeu.
+	 * @param event l'évènement déclenché
+	 */
+	@FXML
+	void backToMenu(ActionEvent event) {
+		Main.changerScene(Main.SCENE_MENU);
+	}
+	
 	/**
 	 * Crée les écouteurs sur les boutons à l'initialisation du contrôleur.
 	 */

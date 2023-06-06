@@ -31,9 +31,8 @@ public class Main extends Application {
 	/** 
 	 * Indice pour la scène du jeu
 	 */
-	public static final int SCENE_AIDE = 2;
 	
-	private static Scene[] scenes = new Scene[4];
+	private static Scene[] scenes = new Scene[2];
 	
 	private static Stage fenetre;
 
@@ -48,7 +47,6 @@ public class Main extends Application {
 		try {
 			scenes[0] = createScene("../vue/Menu.fxml");
 			scenes[1] = createScene("../vue/MenuModeDeJeu.fxml");
-			scenes[2] = createScene("../vue/Aide.fxml");
 		} catch (Exception e) {
 			System.err.println(e.getMessage());;
 		}
@@ -99,9 +97,9 @@ public class Main extends Application {
 			scene = new Scene(racine);
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new IOException("La scène : \"" + urlFXML 
-					+ "\" n'a pas pu être crée.\n"
-					+ e.getStackTrace());
+					+ "\" n'a pas pu être crée.\n");
 		}
 		return scene;
 	}
@@ -134,12 +132,23 @@ public class Main extends Application {
 		
 	}
 	
+	public static void changerSceneAide() {
+		try {
+			Scene scene = createScene("../vue/Aide.fxml", 
+				new ControleurAide(fenetre.getScene()));
+			changerScene(scene);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
+	}
+	
 	/**
 	 * Change la scène affichée dans la fenêtre par celle passée en paramètre
 	 * et l'affiche
 	 * @param scene la scène à afficher 
 	 */
-	private static void changerScene(Scene scene) {
+	public static void changerScene(Scene scene) {
 		fenetre.setScene(scene);
 		fenetre.show();
 	}
