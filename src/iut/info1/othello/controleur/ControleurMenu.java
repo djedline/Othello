@@ -16,7 +16,7 @@ public class ControleurMenu {
 	 * @param event l'évènement déclenché
 	 */
 	@FXML
-	void aide(ActionEvent event) {
+	private void aide(ActionEvent event) {
 		Main.changerScene(Main.SCENE_AIDE);
 	}
 
@@ -25,7 +25,7 @@ public class ControleurMenu {
 	 * @param event l'évènement déclenché
 	 */
 	@FXML
-	void continuer(ActionEvent event) {
+	private void continuer(ActionEvent event) {
 		System.err.println("Not yet implemented");
 	}
 
@@ -34,7 +34,7 @@ public class ControleurMenu {
 	 * @param event l'évènement déclenché
 	 */
 	@FXML
-	void nouvellePartie(ActionEvent event) {
+	private void nouvellePartie(ActionEvent event) {
 		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
 	}
 

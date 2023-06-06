@@ -17,6 +17,9 @@ import iut.info1.othello.modele.joueurs.JoueurHumain;
 
 /**
  * Tests unitaires de la classe TestModele.
+ * @author BAUDROIT Leïla
+ * @author BOYER Djedline
+ * @author BRIOT Nael
  */
 class TestModele {
 
