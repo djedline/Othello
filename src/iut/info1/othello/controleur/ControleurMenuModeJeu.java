@@ -22,8 +22,9 @@ public class ControleurMenuModeJeu {
 	 */
 	@FXML
 	private void creerPartiePVP() {
-		new Modele(new JoueurHumain(BLANC), new JoueurHumain(NOIR));
-		Main.changerScene(Main.SCENE_JEU);
+		Modele modele = new Modele(new JoueurHumain(BLANC), 
+				new JoueurHumain(NOIR));
+		Main.changerSceneJeu(modele);
 	}
 	
 	/**
@@ -31,8 +32,9 @@ public class ControleurMenuModeJeu {
 	 */
 	@FXML
 	private void creerPartieIAFacile() {
-		new Modele(new JoueurHumain(BLANC), new IAFacile(NOIR));
-		Main.changerScene(Main.SCENE_JEU);
+		Modele modele = new Modele(new JoueurHumain(BLANC), 
+				new IAFacile(NOIR));
+		Main.changerSceneJeu(modele);
 	}
 	
 	/**
@@ -40,8 +42,9 @@ public class ControleurMenuModeJeu {
 	 */
 	@FXML
 	private void creerPartieIADifficile() {
-		new Modele(new JoueurHumain(BLANC), new IADifficile(NOIR));
-		Main.changerScene(Main.SCENE_JEU);
+		Modele modele = new Modele(new JoueurHumain(BLANC), 
+				new IADifficile(NOIR));
+		Main.changerSceneJeu(modele);
 	}
 
 }
