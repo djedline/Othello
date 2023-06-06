@@ -11,11 +11,12 @@ import iut.info1.othello.modele.Modele;
  */
 public class IA extends Joueur {
 
-        /** TODO comment initial state
-         * @param couleur
+        /** Crée une IA.
+         * @param i l'entier associé au joueur
+         * @param couleur la couleur de ses pions
          */
-        public IA(ContenuCase couleur) {
-                super(couleur);
+        public IA(int i, ContenuCase couleur) {
+                super(i, couleur);
         }
         
         /** TODO comment method role

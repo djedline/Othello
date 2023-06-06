@@ -53,9 +53,8 @@ public class ControleurJeu {
 					ContenuCase couleur = modele.getJoueurActuel().getCouleur();
 					if (modele.peutAjouterPion(row, column, couleur)) {
 						modele.ajouterPion(row, column);
-						changerPion(child, couleur);
+						changerAffichagePion(child, couleur);
 					};
-					System.out.println(modele);
 					updateTourDuJoueur();
 				}
 			});
@@ -126,12 +125,11 @@ public class ControleurJeu {
 	 * @param couleur la couleur a ajouter (NOIR ou BLANC)
 	 * @throws IllegalArgumentException si la couleur du pion est invalide.
 	 */
-	protected void changerPion(Node bouton, ContenuCase couleur) {
+	private void changerAffichagePion(Node bouton, ContenuCase couleur) {
 		if (couleur == ContenuCase.RIEN) {
 			throw new IllegalArgumentException("Impossible d'ajouter un pion vide");
 		}
 		String cssColor;
-		//String url;
 		if (couleur == ContenuCase.BLANC) {
 			cssColor = "blanc";
 		} else {

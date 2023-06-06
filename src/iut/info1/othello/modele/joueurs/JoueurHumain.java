@@ -8,11 +8,13 @@ import iut.info1.othello.modele.ContenuCase;
  */
 public class JoueurHumain extends Joueur {
 
-        /** TODO comment initial state
-         * @param couleur
+        /**
+         * Représente un joueur humain.
+         * @param i l'entier associé au joueur
+         * @param couleur la couleur de ses pions
          */
-        public JoueurHumain(ContenuCase couleur) {
-                super(couleur);
+        public JoueurHumain(int i, ContenuCase couleur) {
+                super(i, couleur);
                 System.out.println("Je suis un humain");
         }
 }

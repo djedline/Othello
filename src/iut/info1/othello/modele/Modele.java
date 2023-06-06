@@ -2,6 +2,9 @@ package iut.info1.othello.modele;
 
 import iut.info1.othello.modele.joueurs.IA;
 import iut.info1.othello.modele.joueurs.Joueur;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  * Représente la logique du jeu. 
@@ -50,7 +53,7 @@ public class Modele {
      */
     public void changerJoueur() {
         if(isFinJeu()) {
-            // TODO 
+            new Alert(AlertType.INFORMATION, joueurActuel + " a gagné.", ButtonType.OK);
         } else {
             joueurActuel = 
                     (joueurActuel == joueur1) ? joueur2 : joueur1;
@@ -113,4 +116,17 @@ public class Modele {
     public Joueur getJoueurActuel() {
         return joueurActuel;
     }
+
+    /**
+     * Prédicat vérifiant la validité d'un ajout.
+     * @param row la ligne de la case à vérifier
+     * @param column la colonne de la case à vérifier
+     * @param couleur la couleur du pion à ajouter
+     * @return
+     */
+	public boolean peutAjouterPion(int ligne, int colonne, ContenuCase couleur) {
+		return ligne >= 0 && ligne <= 7
+				&& colonne >= 0 && colonne <= 7
+				&& couleur != ContenuCase.RIEN;
+	}
 }

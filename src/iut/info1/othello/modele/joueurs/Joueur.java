@@ -21,11 +21,12 @@ public class Joueur {
 
         /**
          * Crée un joueur assigné à une couleur de pion.
-         * @param couleur la couleur de pion associée.
+         * @param i l'entier associé au joueur
+         * @param couleur la couleur de ses pions
          * @throws IllegalArgumentException si la couleur passée en paramètre
          * est RIEN.
          */
-        public Joueur(iut.info1.othello.modele.ContenuCase couleur) {
+        public Joueur(int i, iut.info1.othello.modele.ContenuCase couleur) {
                 if (couleur == RIEN) {
                         throw new IllegalArgumentException("Un joueur ne peut "
                                         + "poser des cases vides.");

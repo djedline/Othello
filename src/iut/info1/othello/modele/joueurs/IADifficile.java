@@ -9,10 +9,11 @@ public class IADifficile extends IA {
         
         /**
          * Crée une IA difficile.
-         * @param couleur la couleur de pion qui lui est associée.
+         * @param i l'entier associé au joueur
+         * @param couleur la couleur de ses pions
          */
-        public IADifficile(ContenuCase couleur) {
-                super(couleur);
+        public IADifficile(int i, ContenuCase couleur) {
+                super(i, couleur);
                 System.out.println("Je suis une IA difficile");
         }
 

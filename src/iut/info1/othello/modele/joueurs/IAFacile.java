@@ -13,10 +13,11 @@ public class IAFacile extends IA {
         
         /**
          * Crée une IA facile.
-         * @param couleur la couleur de pion associée.
+         * @param i l'entier associé au joueur
+         * @param couleur la couleur de ses pions
          */
-        public IAFacile(ContenuCase couleur) {
-                super(couleur);
+        public IAFacile(int i, ContenuCase couleur) {
+                super(i, couleur);
                 System.out.println("Je suis une IA facile");
         }
         
