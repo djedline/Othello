@@ -10,32 +10,32 @@ import javafx.fxml.FXML;
  * @author BRIOT Nael
  */
 public class ControleurMenu {
-	
-	/**
-	 * Affiche l'aide du jeu.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	private void aide(ActionEvent event) {
-		Main.changerSceneAide();
-	}
+        
+        /**
+         * Affiche l'aide du jeu.
+         * @param event l'évènement déclenché
+         */
+        @FXML
+        private void aide(ActionEvent event) {
+                Main.changerSceneAide();
+        }
 
-	/**
-	 * Permet de continuer une partie sauvegardée.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	private void continuer(ActionEvent event) {
-		System.err.println("Not yet implemented");
-	}
+        /**
+         * Permet de continuer une partie sauvegardée.
+         * @param event l'évènement déclenché
+         */
+        @FXML
+        private void continuer(ActionEvent event) {
+                System.err.println("Not yet implemented");
+        }
 
-	/**
-	 * Permet de commencer une nouvelle partie
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	private void nouvellePartie(ActionEvent event) {
-		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
-	}
+        /**
+         * Permet de commencer une nouvelle partie
+         * @param event l'évènement déclenché
+         */
+        @FXML
+        private void nouvellePartie(ActionEvent event) {
+                Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+        }
 
 }

@@ -9,7 +9,8 @@ import static iut.info1.othello.modele.ContenuCase.NOIR;
 import static iut.info1.othello.modele.ContenuCase.RIEN;
 
 
-/** TODO comment class responsibility (SRP)
+/** 
+ * Permet de créer un plateau de 8x8
  * @author Djed
  *
  */
@@ -18,8 +19,9 @@ public class Plateau {
     private ContenuCase[][] plateau = new ContenuCase[8][8];
     private ContenuCase[][]tableauPosition;
 
-    /** TODO comment method role
-     * 
+    /** 
+     * Créer un plateau d'othello
+     * et l'initialise
      */
     public Plateau() {
         for (int lignes = 0 ; lignes < plateau.length ; lignes++) {
@@ -33,20 +35,21 @@ public class Plateau {
         plateau[4][3] = BLANC;
     }
 
-    /** TODO comment method role
-     * @param ligne
-     * @param colonne
-     * @return false
+    /** 
+     * @return le plateau
      */
     public ContenuCase[][] getPlateau() {
         return plateau;//STUB
     }
 
-    /** TODO comment method role
-     * @param ligne 
-     * @param colonne 
-     * @param couleur 
-     * @return h
+    /** 
+     * Permet de vérifier que la pose souhaité par l'utilisateur
+     * fait bien partie des pose possible
+     * @param ligne la ligne du plateau où le pion doit être déplacé
+     * @param colonne la colonne du tableau où le pion doit être déplacé
+     * @param couleur la couleur du pion qui doit être posé
+     * @return true si le pion peut être posé
+     *         false sinon
      */
     public boolean comparePosage(int ligne, int colonne, ContenuCase couleur) {
         positionPossible(couleur);
@@ -54,15 +57,17 @@ public class Plateau {
 
     }
 
-    /** TODO comment method role
-     * @param couleurPion 
+    /** 
+     * Vérifie toutes les positions possible pour une couleur de pion définie
+     * et stocke les possibilités dans un tableau
+     * @param couleurPion la couleur du pion qui doit être placé sur le plateau
      */
     public void positionPossible(ContenuCase couleurPion) {
         tableauPosition = new ContenuCase[8][8];
         for (int lignes = 0 ; lignes < tableauPosition.length ; lignes++) {
             for (int colonnes = 0 ; colonnes < tableauPosition[lignes].length ; colonnes++) {
                 if (plateau[lignes][colonnes] == RIEN) {
-                    if (autorisePosage(lignes, colonnes, couleurPion)) {
+                    if (autorisePosagePerpendiculaire(lignes, colonnes, couleurPion)) {
                         tableauPosition[lignes][colonnes] = couleurPion;
                     } 
                 } else {
@@ -72,13 +77,16 @@ public class Plateau {
         } 
     }
 
-    /** TODO comment method role
-     * @param ligne 
-     * @param colonne 
-     * @param couleur 
-     * @return false
+    /** 
+     * Permet de vérifer les conditions de pose pour un pion d'une couleur donnée
+     * Vérifie les conditions de pose vertical et horizontal
+     * @param ligne la ligne du plateau où le pion doit être posé
+     * @param colonne la colonne du tableau où le pion doit être posé
+     * @param couleur la couleur du pion qui doit être posé 
+     * @return true si l'utilisateur peut poser
+     *         false sinon
      */
-    public boolean autorisePosage(int ligne, int colonne, ContenuCase couleur) {
+    public boolean autorisePosagePerpendiculaire(int ligne, int colonne, ContenuCase couleur) {
         boolean posagePossible = false;
         ContenuCase couleurAdversaire;
         if (couleur == NOIR) {
@@ -121,20 +129,15 @@ public class Plateau {
 
     }
 
-    /** TODO comment method role
-     * @return false
-     */
-    public boolean balayageHaut() {
-        return false;//STUB
-
-    }
-
-    /** TODO comment method role
-     * @param ligne
-     * @param colonne
-     * @param couleur
-     * @return 4
-     * @throws IllegalArgumentException()
+    /** 
+     * Permet de modifier le plateau
+     * Si l'utilisateur pose un pion qui peut être posé
+     * alors le pion apparaîtra sur le plateau
+     * @param ligne la ligne du plateau où le pion doit être posé
+     * @param colonne la colonne du tableau où le pion doit être posé
+     * @param couleur la couleur du pion qui doit être posé 
+     * @return un message indiquant que le pion a bien était posé
+     * @throws IllegalArgumentException() si l'utilisateur ne peut pas poser
      */
     public String setTableau(int ligne, int colonne, ContenuCase couleur) {
         if(comparePosage(ligne, colonne, couleur)) {
@@ -179,14 +182,42 @@ public class Plateau {
 
     }
 
-    /** TODO comment method role
-     * @param ligne
-     * @param colonne
+    /** 
+     * Vérifie si une case du plateau est vide
+     * @param ligne la ligne du plateau où la case doit être vérifié
+     * @param colonne la colonne du tableau où la case doit être vérifié
      * @return true si la cas est vide
      *         false si la case contient un pion
      */
     public boolean isVide(int ligne, int colonne) {
         return plateau[ligne][colonne] == RIEN;
+    }
+
+    /** 
+     * Permet de connaître la couleur du pion posé sur la case
+     * @param ligne la ligne du plateau où la case doit être vérifié
+     * @param colonne la colonne du tableau où la case doit être vérifié
+     * @return la couleur du pion posé sur la case;
+     */
+    public ContenuCase getCouleur(int ligne, int colonne) {
+        return plateau[ligne][colonne];
+
+    }
+
+    /** 
+     * Permet de connaître le nombre de ligne dans le plateau
+     * @return le nombre de ligne du plateau
+     */
+    public int getNbLignes() {
+        return plateau.length;
+    }
+
+    /** 
+     * Permet de connaître le nombre de ligne dans le plateau
+     * @return le nombre de ligne du plateau
+     */
+    public int getNbColonnes() {
+        return plateau[0].length;
     }
 
     /** 

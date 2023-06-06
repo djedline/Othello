@@ -2,18 +2,17 @@ package iut.info1.othello.modele.joueurs;
 
 import iut.info1.othello.modele.ContenuCase;
 
-/**
- * Représente un joueur humain.
+/** TODO comment class responsibility (SRP)
+ * @author Djed
+ *
  */
 public class JoueurHumain extends Joueur {
 
-	/**
-	 * Crée un joueur humain.
-	 * @param i l'indice du joueur
-	 * @param couleur la couleur de pion associée.
-	 */
-	public JoueurHumain(int i, ContenuCase couleur) {
-		super(i, couleur);
-		super.nom = "Joueur humain " + i;
-	}
+        /** TODO comment initial state
+         * @param couleur
+         */
+        public JoueurHumain(ContenuCase couleur) {
+                super(couleur);
+                System.out.println("Je suis un humain");
+        }
 }
