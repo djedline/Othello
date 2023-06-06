@@ -49,7 +49,7 @@ public class ControleurJeu {
 	 */
 	@FXML
 	void openAide(ActionEvent event) {
-		Main.changerScene(Main.SCENE_AIDE);
+		Main.changerSceneAide();
 	}
 	
 	/**
@@ -58,7 +58,7 @@ public class ControleurJeu {
 	 */
 	@FXML
 	void backToMenu(ActionEvent event) {
-		Main.changerScene(Main.SCENE_MENU_MODE_JEU);
+		Main.changerScene(Main.SCENE_MENU);
 	}
 	
 	/**

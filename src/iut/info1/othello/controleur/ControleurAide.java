@@ -2,14 +2,15 @@ package iut.info1.othello.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ControleurAide {
 	
-	private Stage fenetreAide;
+	private Scene fenetreAide;
 	
-	public ControleurAide(Stage fenetreAide) {
-		this.fenetreAide = fenetreAide ;
+	public ControleurAide(Scene fenetrePrecedente) {
+		this.fenetreAide = fenetrePrecedente ;
 	}
 	/**
 	 * Revient au Menu pricipal.
@@ -17,8 +18,6 @@ public class ControleurAide {
 	 */
 	@FXML
 	void retourMenu(ActionEvent event) {
-	//	if (fenetreAide == null) 
-		Main.changerScene(Main.SCENE_MENU);
-	//	
+		Main.changerScene(fenetreAide);
 	}
 }

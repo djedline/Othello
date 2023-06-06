@@ -17,7 +17,7 @@ public class ControleurMenu {
 	 */
 	@FXML
 	private void aide(ActionEvent event) {
-		Main.changerScene(Main.SCENE_AIDE);
+		Main.changerSceneAide();
 	}
 
 	/**
