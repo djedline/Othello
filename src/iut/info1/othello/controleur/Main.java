@@ -52,6 +52,8 @@ public class Main extends Application {
 		}
 
 		fenetre.setTitle("Othello");
+		fenetre.setHeight(460);
+		fenetre.setWidth(610);
 		fenetre.setScene(scenes[SCENE_MENU]);
 		fenetre.show();
 	}

@@ -76,7 +76,7 @@ public class Modele {
     			: joueurNoir;
         new Alert(AlertType.INFORMATION, 
         		gagnant.getNom() + " a gagné.", 
-        		ButtonType.OK);
+        		ButtonType.OK).show();
 	}
 
 	/** 

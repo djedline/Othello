@@ -7,6 +7,5 @@ Button.noir {
 }
 
 Button.plateau-case {
-	-fx-background-image: url("../../../../../images/Case_vide.png"); 
 	-fx-background-color: green;	
 }
