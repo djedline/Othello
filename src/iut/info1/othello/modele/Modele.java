@@ -1,11 +1,9 @@
 package iut.info1.othello.modele;
 
-import static iut.info1.othello.modele.ContenuCase.BLANC;
-import static iut.info1.othello.modele.ContenuCase.NOIR;
-import static iut.info1.othello.modele.ContenuCase.RIEN;
-
-import iut.info1.othello.modele.joueurs.IA;
 import iut.info1.othello.modele.joueurs.Joueur;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  * Représente la logique du jeu. 
@@ -35,7 +33,7 @@ public class Modele {
         this.joueur1 = j1;
         this.joueur2 = j2;
 
-        joueurActuel = joueur2;
+        joueurActuel = joueur1;
     }
 
     /**
@@ -54,39 +52,48 @@ public class Modele {
      */
     public void changerJoueur() {
         if(isFinJeu()) {
-            System.out.println("Fin de la partie"); 
+        	alerteGagnant();
         } else {
             joueurActuel = 
                     (joueurActuel == joueur1) ? joueur2 : joueur1;
-            if (joueurActuel instanceof IA) {
-                ((IA) joueurActuel).jouer(this);
-            }
-        }
-    }
-
-    /** 
-     * Permet d'ajouter un pion au tableau de pions représentant
-     * le tableau de jeu. La couleur est déduite automatiquement.
-     * @param ligne la ligne où ajouter le pion (de 0 à 7)
-     * @param colonne la colonne où ajouter le pion (de 0 à 7)
-     */
-    public void ajouterPion(int ligne, int colonne) {
-        try {
-            plateau.setTableau(ligne, colonne, joueurActuel.getCouleur());
-            changerJoueur();
-        } catch (IllegalArgumentException erreur) {
-            System.out.println("Impossible de poser ici");
         }
     }
 
     /**
-     * Permet de trouver l'ensemble des cases adjacentes (diagonales inclues) au pion qui va être posé
-     * 
-     *  
+     * Affiche le gagnant.
      */
+    private void alerteGagnant() {
+    	Joueur joueurNoir;
+    	Joueur joueurBlanc;
+    	if (joueur1.getCouleur() == ContenuCase.NOIR) {
+    		joueurNoir = joueur1;
+    		joueurBlanc = joueur2;
+    	} else {
+    		joueurNoir = joueur2;
+    		joueurBlanc = joueur1;
+    	}
+    	Joueur gagnant = plateau.getBlanc() > plateau.getNoir() ? joueurBlanc 
+    			: joueurNoir;
+        new Alert(AlertType.INFORMATION, 
+        		gagnant.getNom() + " a gagné.", 
+        		ButtonType.OK);
+	}
 
-    //TODO faire la fonction
-
+	/** 
+     * Permet d'ajouter un pion au tableau de pions représentant
+     * le tableau de jeu. La couleur est déduite automatiquement.
+     * @param ligne la ligne où ajouter le pion (de 0 à 7)
+     * @param colonne la colonne où ajouter le pion (de 0 à 7)
+     * @throws IllegalArgumentException s'il est impossible de poser
+     * un pion à cet endroit
+     */
+    public void ajouterPion(int ligne, int colonne) throws IllegalArgumentException{
+        try {
+            plateau.setTableau(ligne, colonne, joueurActuel.getCouleur());
+        } catch (IllegalArgumentException erreur) {
+            System.out.println("Impossible de poser ici");
+        }
+    }
 
     /**
      * Affiche les éléments du plateau.
@@ -99,8 +106,8 @@ public class Modele {
             for (int colonnes = 0 ; colonnes < plateau.getNbColonnes() ; colonnes++) {
                 String pion = " ";
                 switch (plateau.getCouleur(lignes, colonnes)) {
-                case NOIR -> pion =  "N";
-                case BLANC -> pion = "B";
+                case NOIR -> pion =  "⚫";
+                case BLANC -> pion = "⚪";
                 case RIEN -> pion =  "  ";
                 }
                 resultat += pion + "|";
@@ -127,4 +134,17 @@ public class Modele {
     public Joueur getJoueurActuel() {
         return joueurActuel;
     }
+
+    /**
+     * Prédicat vérifiant la validité d'un ajout.
+     * @param row la ligne de la case à vérifier
+     * @param column la colonne de la case à vérifier
+     * @param couleur la couleur du pion à ajouter
+     * @return
+     */
+	public boolean peutAjouterPion(int ligne, int colonne, ContenuCase couleur) {
+		return ligne >= 0 && ligne <= 7
+				&& colonne >= 0 && colonne <= 7
+				&& couleur != ContenuCase.RIEN;
+	}
 }

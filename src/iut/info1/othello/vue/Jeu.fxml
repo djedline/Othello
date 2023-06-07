@@ -37,7 +37,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0">
                <children>
-                  <Label fx:id="tourDuJoueur" text="C'est le tour du joueur">
+                  <Label text="C'est le tour du joueur" fx:id="tourDuJoueur">
                      <font>
                         <Font size="20.0" />
                      </font></Label>
@@ -51,7 +51,7 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <Label fx:id="score1" text="0">
+                        <Label text="0">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
@@ -155,7 +155,7 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <Label fx:id="score2" text="0">
+                        <Label text="0">
                            <font>
                               <Font size="18.0" />
                            </font></Label>

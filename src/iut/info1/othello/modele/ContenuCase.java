@@ -1,16 +1,14 @@
 package iut.info1.othello.modele;
 
-/** 
- * Permet de créer des pions prédéfinis
- * @author BAUDROIT Leïla
- * @author BOYER Djedline
- * @author BRIOT Nael
+/** TODO comment class responsibility (SRP)
+ * @author Djed
+ *
  */
 public enum ContenuCase {
-        /** créé un pion Blanc */
+        /** TODO comment field role (attribute, association) */
         BLANC,
-        /** créé un pion Noir */
+        /** TODO comment field role (attribute, association) */
         NOIR,
-        /** Créé une case Vide */
+        /** TODO comment field role (attribute, association) */
         RIEN;
 }

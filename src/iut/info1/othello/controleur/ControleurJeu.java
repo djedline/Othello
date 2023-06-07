@@ -7,11 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
@@ -31,14 +28,6 @@ public class ControleurJeu {
 	/** Affiche le nom du joueur dont c'est le tour */
 	@FXML
 	private Label tourDuJoueur;
-	
-	/** Contient le score du 1e joueur*/
-    @FXML
-    private Label score1;
-
-    /** Contient le score du 2e joueur*/
-    @FXML
-    private Label score2;
 
 	/**
 	 * Crée le contrôleur de jeu et lui associe un modèle.
@@ -64,7 +53,7 @@ public class ControleurJeu {
 	}
 	
 	/**
-	 * Gère l'ajout de pion suite au clic.
+	 * Gère la 
 	 * @param bouton le bouton affecté
 	 * @param event l'évènement du clic
 	 */
@@ -78,7 +67,9 @@ public class ControleurJeu {
 			changerAffichagePion(bouton, couleur);
 		};
 		updateTourDuJoueur();
-		updateScore();
+		if (modele.getJoueurActuel() instanceof IA) {
+			faireJouerIA((IA) modele.getJoueurActuel());
+		}
 	}
 	
 	/**
@@ -156,7 +147,7 @@ public class ControleurJeu {
 	 */
 	@FXML
 	private void stopGame(ActionEvent event) {
-		new Alert(AlertType.WARNING, "Fonction non implémentée.", ButtonType.OK).show();
+		System.err.println("Not yet implemented");
 	}
 
 	/**
@@ -179,11 +170,6 @@ public class ControleurJeu {
 
 	private void updateTourDuJoueur() {
 		tourDuJoueur.setText("C'est le tour de " + modele.getJoueurActuel().getNom());
-	}
-	
-	private void updateScore() {
-		score1.setText("" + modele.getPions().getBlanc());
-		score2.setText("" + modele.getPions().getNoir());
 	}
 
 	/**
