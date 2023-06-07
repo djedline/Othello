@@ -2,13 +2,11 @@ package iut.info1.othello.controleur;
 
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
-import iut.info1.othello.modele.joueurs.IA;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
@@ -23,11 +21,6 @@ public class ControleurJeu {
 
 	/** Le modèle du jeu avec lequel le contrôleur interagit*/
 	private Modele modele;
-
-
-	/** Affiche le nom du joueur dont c'est le tour */
-	@FXML
-	private Label tourDuJoueur;
 
 	/**
 	 * Crée le contrôleur de jeu et lui associe un modèle.
@@ -53,11 +46,11 @@ public class ControleurJeu {
 	}
 	
 	/**
-	 * Gère la 
+	 * Gère l'ajout de pion au clic.
 	 * @param bouton le bouton affecté
 	 * @param event l'évènement du clic
 	 */
-	void handle(Node bouton, MouseEvent event){
+	private void handle(Node bouton, MouseEvent event){
 		int row = getRowOfChild(bouton);
 		int column = getColumnOfChild(bouton);
 		System.out.printf("Ligne : %d, colonne : %d\n", row, column);
@@ -66,17 +59,6 @@ public class ControleurJeu {
 			modele.ajouterPion(row, column);
 			changerAffichagePion(bouton, couleur);
 		};
-		updateTourDuJoueur();
-		if (modele.getJoueurActuel() instanceof IA) {
-			faireJouerIA((IA) modele.getJoueurActuel());
-		}
-	}
-	
-	/**
-	 * Appelle la fonction de jeu de l'IA et affiche son résultat.
-	 */
-	protected void faireJouerIA(IA joueur) {
-		joueur.jouer(modele);
 	}
 
 	/**
@@ -96,23 +78,6 @@ public class ControleurJeu {
 		column = (column == null) ? 0 : column;
 		return column;
 	}
-	
-	/**
-	 * Permet de retrouver un bouton dans la grille
-	 * @throws IllegalArgumentException si le node n'est pas dans le plateau
-	 */
-	private Node identifiePion(int ligneCherchee, int colonneCherchee) {
-		int row;
-		int column;
-		for (Node enfant : grille.getChildren()) {
-			row = getRowOfChild(enfant);
-			column = getColumnOfChild(enfant);
-			if (row == ligneCherchee && column == colonneCherchee) {
-				return enfant;
-			}
-		}
-		throw new IllegalArgumentException("Ce Node n'appartient pas au plateau");
-	}
 
 	/**
 	 * Revient au Menu pricipal.
@@ -121,15 +86,6 @@ public class ControleurJeu {
 	@FXML
 	private void menuDeroulant(ActionEvent event) {
 		Main.changerScene(Main.SCENE_MENU);
-	}
-
-	/**
-	 * Permet au joueur de passer son tour.
-	 * @param event l'évènement déclenché
-	 */
-	@FXML
-	private void passerTour(ActionEvent event) {
-		modele.changerJoueur();
 	}
 
 	/**
@@ -167,11 +123,7 @@ public class ControleurJeu {
 	private void backToMenu(ActionEvent event) {
 		Main.changerScene(Main.SCENE_MENU);
 	}
-
-	private void updateTourDuJoueur() {
-		tourDuJoueur.setText("C'est le tour de " + modele.getJoueurActuel().getNom());
-	}
-
+	
 	/**
 	 * Permet de changer l'apparence d'une case sur le plateau.
 	 * @param bouton la case à modifier

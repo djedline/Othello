@@ -13,12 +13,24 @@ import javafx.scene.control.ButtonType;
  */
 public class Modele {
 
+	/**
+	 * Le premier joueur.
+	 */
     Joueur joueur1;
+    
+    /**
+     * Le deuxième joueur.
+     */
     Joueur joueur2;
+    
+    /**
+     * Le joueur dont c'est le tour
+     */
     Joueur joueurActuel;
 
-    //TODO ajouter constructeur en fonction du type de jeu
-
+    /**
+     * Les cases associées à ce modèle
+     */
     Plateau plateau;
 
     /**
@@ -145,7 +157,6 @@ public class Modele {
 	public boolean peutAjouterPion(int ligne, int colonne, ContenuCase couleur) {
 		return ligne >= 0 && ligne <= 7
 				&& colonne >= 0 && colonne <= 7
-				&& couleur != ContenuCase.RIEN
-				&& plateau.getCouleur(ligne, colonne) == ContenuCase.RIEN;
+				&& couleur != ContenuCase.RIEN;
 	}
 }
