@@ -5,16 +5,20 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/** TODO comment class responsibility (SRP)
- * @author Djed
- *
+/**
+ * Affiche l'aide et la met à jour.
+ * @author BAUDROIT Leïla
+ * @author BOYER Djedline
+ * @author BRIOT Nael
  */
 public class ControleurAide {
         
         private Scene fenetreAide;
         
-        /** TODO comment initial state
-         * @param fenetrePrecedente
+        /** 
+         * Crée le contrôleur en gardant en mémoire la scène
+         * précédente.
+         * @param fenetrePrecedente la scène précédente
          */
         public ControleurAide(Scene fenetrePrecedente) {
                 this.fenetreAide = fenetrePrecedente ;

@@ -76,8 +76,32 @@ class TestModele {
 	@Test
 	void testPeutAjouterPion() {
 		// Ne pas ajouter de pion hors du plateau
+		assertFalse(initialisé.peutAjouterPion(
+				Integer.MIN_VALUE, 
+				0, 
+				NOIR));
+		assertFalse(initialisé.peutAjouterPion(
+				0, 
+				Integer.MIN_VALUE, 
+				NOIR));
+		assertFalse(initialisé.peutAjouterPion(-1000, 0, NOIR));
 		assertFalse(initialisé.peutAjouterPion(-1, -1, NOIR));
 		assertFalse(initialisé.peutAjouterPion(8, 8, NOIR));
+		assertFalse(initialisé.peutAjouterPion(0, 1000, NOIR));
+		assertFalse(initialisé.peutAjouterPion(
+				0, 
+				Integer.MAX_VALUE, 
+				NOIR));
+		assertFalse(initialisé.peutAjouterPion(
+				Integer.MAX_VALUE, 
+				0, 
+				NOIR));
+		
+		assertTrue(initialisé.peutAjouterPion(0, 7, NOIR));
+		assertTrue(initialisé.peutAjouterPion(1, 6, BLANC));
+		assertTrue(initialisé.peutAjouterPion(2, 4, BLANC));
+		assertTrue(initialisé.peutAjouterPion(6, 1, NOIR));
+		assertTrue(initialisé.peutAjouterPion(7, 0, BLANC));
 		
 		// Ne pas ajouter de pion sur les existants
 		assertFalse(initialisé.peutAjouterPion(3, 3, NOIR));
@@ -90,8 +114,7 @@ class TestModele {
 		assertTrue(initialisé.peutAjouterPion(4, 2, NOIR));
 		
 		// Ajouter un pion trop loin des autres
-		//TODO compléter les règles de posage
-		//assertFalse(initialisé.peutAjouterPion(0, 0, NOIR));
+		//TODO : règles de posage
 	}
 	
 	@Test
