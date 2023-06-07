@@ -9,10 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
+import iut.info1.othello.modele.joueurs.Joueur;
 import iut.info1.othello.modele.joueurs.JoueurHumain;
 
 /**
@@ -23,11 +25,14 @@ import iut.info1.othello.modele.joueurs.JoueurHumain;
  */
 class TestModele {
 
+	Joueur[] joueursInitialisés;
 	private Modele initialisé;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		initialisé = new Modele(new JoueurHumain(1, BLANC), new JoueurHumain(2, NOIR));
+		joueursInitialisés = new Joueur[]{new JoueurHumain(1, BLANC), 
+				new JoueurHumain(2, NOIR)};
+		initialisé = new Modele(joueursInitialisés[0], joueursInitialisés[1]);
 	}
 
 	@Test
@@ -87,5 +92,12 @@ class TestModele {
 		// Ajouter un pion trop loin des autres
 		//TODO compléter les règles de posage
 		//assertFalse(initialisé.peutAjouterPion(0, 0, NOIR));
+	}
+	
+	@Test
+	@DisplayName(value = "Test getJoueurActuel et changerJoueur")
+	void testChangerJoueur() {
+		initialisé.changerJoueur();
+		assertEquals(joueursInitialisés[1], initialisé.getJoueurActuel());
 	}
 }
