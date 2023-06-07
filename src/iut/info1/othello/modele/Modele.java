@@ -53,7 +53,9 @@ public class Modele {
      */
     public void changerJoueur() {
         if(isFinJeu()) {
-            new Alert(AlertType.INFORMATION, joueurActuel + " a gagné.", ButtonType.OK);
+            new Alert(AlertType.INFORMATION, 
+            		joueurActuel + " a gagné.", 
+            		ButtonType.OK);
         } else {
             joueurActuel = 
                     (joueurActuel == joueur1) ? joueur2 : joueur1;
