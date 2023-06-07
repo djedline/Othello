@@ -15,7 +15,10 @@
       </ImageView>
       <VBox alignment="TOP_CENTER" layoutX="35.0" layoutY="37.0" prefHeight="327.0" prefWidth="531.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans le menu d'aide" textAlignment="CENTER" wrappingWidth="173.13671875" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue dans le menu d'aide" textAlignment="CENTER" wrappingWidth="173.13671875">
+               <font>
+                  <Font size="19.0" />
+               </font></Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dans ce ce menu vous trouverez toutes les informations nécessaires pour bien apprendre à jouer" />

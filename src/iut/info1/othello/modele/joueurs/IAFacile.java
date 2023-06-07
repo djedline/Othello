@@ -18,7 +18,6 @@ public class IAFacile extends IA {
          */
         public IAFacile(int i, ContenuCase couleur) {
                 super(i, couleur);
-                System.out.println("Je suis une IA facile");
         }
         
         @Override

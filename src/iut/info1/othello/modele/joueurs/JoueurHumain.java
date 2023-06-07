@@ -15,6 +15,5 @@ public class JoueurHumain extends Joueur {
          */
         public JoueurHumain(int i, ContenuCase couleur) {
                 super(i, couleur);
-                System.out.println("Je suis un humain");
         }
 }
