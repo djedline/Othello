@@ -5,10 +5,10 @@ package iut.info1.othello.modele;
  *
  */
 public enum ContenuCase {
-        /** TODO comment field role (attribute, association) */
+        /** Créer un pion Blanc */
         BLANC,
-        /** TODO comment field role (attribute, association) */
+        /** Créer un pion Noir */
         NOIR,
-        /** TODO comment field role (attribute, association) */
+        /** Créer une case vide */
         RIEN;
 }

@@ -145,6 +145,7 @@ public class Modele {
 	public boolean peutAjouterPion(int ligne, int colonne, ContenuCase couleur) {
 		return ligne >= 0 && ligne <= 7
 				&& colonne >= 0 && colonne <= 7
-				&& couleur != ContenuCase.RIEN;
+				&& couleur != ContenuCase.RIEN
+				&& plateau.getCouleur(ligne, colonne) == ContenuCase.RIEN;
 	}
 }

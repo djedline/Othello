@@ -41,7 +41,7 @@
             </Text>
             <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#creerPartiePVP" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: transparrent;" text="Commencer">
                <font>
-                  <Font name="Comic Sans MS" size="14.0" />
+                  <Font size="14.0" />
                </font>
             </Button>
          </children>
