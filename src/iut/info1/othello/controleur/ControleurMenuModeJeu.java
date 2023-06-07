@@ -4,10 +4,11 @@ import static iut.info1.othello.modele.ContenuCase.BLANC;
 import static iut.info1.othello.modele.ContenuCase.NOIR;
 
 import iut.info1.othello.modele.Modele;
-import iut.info1.othello.modele.joueurs.IADifficile;
-import iut.info1.othello.modele.joueurs.IAFacile;
 import iut.info1.othello.modele.joueurs.JoueurHumain;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  * Le contrôleur associé au menu du choix du mode de jeu.
@@ -32,9 +33,7 @@ public class ControleurMenuModeJeu {
          */
         @FXML
         private void creerPartieIAFacile() {
-                Modele modele = new Modele(new JoueurHumain(1, BLANC), 
-                                new IAFacile(2, NOIR));
-                Main.changerSceneJeu(modele);
+        	new Alert(AlertType.WARNING, "Fonction non implémentée.", ButtonType.OK).show();
         }
         
         /**
@@ -42,9 +41,7 @@ public class ControleurMenuModeJeu {
          */
         @FXML
         private void creerPartieIADifficile() {
-                Modele modele = new Modele(new JoueurHumain(1, BLANC), 
-                                new IADifficile(2, NOIR));
-                Main.changerSceneJeu(modele);
+        	new Alert(AlertType.WARNING, "Fonction non implémentée.", ButtonType.OK).show();
         }
 
 }

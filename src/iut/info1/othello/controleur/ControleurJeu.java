@@ -2,6 +2,7 @@ package iut.info1.othello.controleur;
 
 import iut.info1.othello.modele.ContenuCase;
 import iut.info1.othello.modele.Modele;
+import iut.info1.othello.modele.joueurs.IA;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -44,21 +45,73 @@ public class ControleurJeu {
 		for (Node child : grille.getChildren()) {
 			child.setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
-				public void handle(MouseEvent e) {
-					Integer row = grille.getRowIndex(child);
-					Integer column = grille.getColumnIndex(child);
-					row = (row == null) ? 0 : row;
-					column = (column == null) ? 0 : column;
-					System.out.printf("Ligne : %d, colonne : %d\n", row, column);
-					ContenuCase couleur = modele.getJoueurActuel().getCouleur();
-					if (modele.peutAjouterPion(row, column, couleur)) {
-						modele.ajouterPion(row, column);
-						changerAffichagePion(child, couleur);
-					};
-					updateTourDuJoueur();
+				public void handle(MouseEvent event) {
+					ControleurJeu.this.handle(child, event);
 				}
 			});
 		}
+	}
+	
+	/**
+	 * Gère la 
+	 * @param bouton le bouton affecté
+	 * @param event l'évènement du clic
+	 */
+	void handle(Node bouton, MouseEvent event){
+		int row = getRowOfChild(bouton);
+		int column = getColumnOfChild(bouton);
+		System.out.printf("Ligne : %d, colonne : %d\n", row, column);
+		ContenuCase couleur = modele.getJoueurActuel().getCouleur();
+		if (modele.peutAjouterPion(row, column, couleur)) {
+			modele.ajouterPion(row, column);
+			changerAffichagePion(bouton, couleur);
+		};
+		updateTourDuJoueur();
+		if (modele.getJoueurActuel() instanceof IA) {
+			faireJouerIA((IA) modele.getJoueurActuel());
+		}
+	}
+	
+	/**
+	 * Appelle la fonction de jeu de l'IA et affiche son résultat.
+	 */
+	protected void faireJouerIA(IA joueur) {
+		joueur.jouer(modele);
+	}
+
+	/**
+	 * @return la ligne dans laquelle on trouve l'enfant
+	 */
+	private int getRowOfChild(Node child){
+		Integer row = GridPane.getRowIndex(child);
+		row = (row == null) ? 0 : row;
+		return row;
+	}
+	
+	/**
+	 * @return la colonne dans laquelle on trouve l'enfant
+	 */
+	private int getColumnOfChild(Node child){
+		Integer column = GridPane.getColumnIndex(child);
+		column = (column == null) ? 0 : column;
+		return column;
+	}
+	
+	/**
+	 * Permet de retrouver un bouton dans la grille
+	 * @throws IllegalArgumentException si le node n'est pas dans le plateau
+	 */
+	private Node identifiePion(int ligneCherchee, int colonneCherchee) {
+		int row;
+		int column;
+		for (Node enfant : grille.getChildren()) {
+			row = getRowOfChild(enfant);
+			column = getColumnOfChild(enfant);
+			if (row == ligneCherchee && column == colonneCherchee) {
+				return enfant;
+			}
+		}
+		throw new IllegalArgumentException("Ce Node n'appartient pas au plateau");
 	}
 
 	/**

@@ -42,7 +42,7 @@ class TestModele {
 				{RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN},
 				{RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN, RIEN},
 		};
-		assertArrayEquals(RESULTAT, initialisé.getPions());
+		assertArrayEquals(RESULTAT, initialisé.getPions().getPlateau());
 	}
 
 	@Test

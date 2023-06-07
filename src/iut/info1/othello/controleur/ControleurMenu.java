@@ -2,6 +2,9 @@ package iut.info1.othello.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * Le contrôleur associé au menu principal
@@ -26,7 +29,7 @@ public class ControleurMenu {
          */
         @FXML
         private void continuer(ActionEvent event) {
-                System.err.println("Not yet implemented");
+        	new Alert(AlertType.WARNING, "Fonction non implémentée.", ButtonType.OK).show();
         }
 
         /**

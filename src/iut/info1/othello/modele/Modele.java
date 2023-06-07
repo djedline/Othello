@@ -1,6 +1,5 @@
 package iut.info1.othello.modele;
 
-import iut.info1.othello.modele.joueurs.IA;
 import iut.info1.othello.modele.joueurs.Joueur;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -53,25 +52,42 @@ public class Modele {
      */
     public void changerJoueur() {
         if(isFinJeu()) {
-            new Alert(AlertType.INFORMATION, 
-            		joueurActuel + " a gagné.", 
-            		ButtonType.OK);
+        	alerteGagnant();
         } else {
             joueurActuel = 
                     (joueurActuel == joueur1) ? joueur2 : joueur1;
-            if (joueurActuel instanceof IA) {
-                ((IA) joueurActuel).jouer(this);
-            }
         }
     }
 
-    /** 
+    /**
+     * Affiche le gagnant.
+     */
+    private void alerteGagnant() {
+    	Joueur joueurNoir;
+    	Joueur joueurBlanc;
+    	if (joueur1.getCouleur() == ContenuCase.NOIR) {
+    		joueurNoir = joueur1;
+    		joueurBlanc = joueur2;
+    	} else {
+    		joueurNoir = joueur2;
+    		joueurBlanc = joueur1;
+    	}
+    	Joueur gagnant = plateau.getBlanc() > plateau.getNoir() ? joueurBlanc 
+    			: joueurNoir;
+        new Alert(AlertType.INFORMATION, 
+        		gagnant.getNom() + " a gagné.", 
+        		ButtonType.OK);
+	}
+
+	/** 
      * Permet d'ajouter un pion au tableau de pions représentant
      * le tableau de jeu. La couleur est déduite automatiquement.
      * @param ligne la ligne où ajouter le pion (de 0 à 7)
      * @param colonne la colonne où ajouter le pion (de 0 à 7)
+     * @throws IllegalArgumentException s'il est impossible de poser
+     * un pion à cet endroit
      */
-    public void ajouterPion(int ligne, int colonne) {
+    public void ajouterPion(int ligne, int colonne) throws IllegalArgumentException{
         try {
             plateau.setTableau(ligne, colonne, joueurActuel.getCouleur());
         } catch (IllegalArgumentException erreur) {
