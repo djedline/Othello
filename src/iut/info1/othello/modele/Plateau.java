@@ -22,8 +22,10 @@ public class Plateau {
     private boolean bas;
     private boolean droite;
     private boolean gauche;
-    private int index;
-
+    private boolean digoHautGauche;
+    private boolean diagoBasGauche;
+    private boolean digoHautDroite;
+    private boolean diagoBasDroite;
     /** 
      * Créer un plateau d'othello
      * et l'initialise
@@ -84,11 +86,11 @@ public class Plateau {
                 } else {
                     tableauPosition[lignes][colonnes] = RIEN;
                 }
-                resultat += tableauPosition[lignes][colonnes] + ", ";
+               // resultat += tableauPosition[lignes][colonnes] + ", ";
             }
-            resultat += "\n";
+           // resultat += "\n";
         } 
-        System.out.println(resultat);
+       // System.out.println(resultat);
     }
 
     /** 
@@ -103,13 +105,11 @@ public class Plateau {
     public boolean autorisePosagePerpendiculaire(int ligne, int colonne, ContenuCase couleur) {
         boolean posagePossible = false;
         ContenuCase couleurAdversaire;
-        int index;
         if (couleur == NOIR) {
             couleurAdversaire = BLANC;
         } else {
             couleurAdversaire = NOIR;
         }
-        index = 0;
         if(ligne == 7 && plateau[ligne-1][colonne] == couleurAdversaire) {
             posagePossible = true;
         } else if (colonne == 7 && plateau[ligne][colonne-1] == couleurAdversaire){
@@ -119,36 +119,11 @@ public class Plateau {
         } else if (colonne == 0 && plateau[ligne][colonne+1] == couleurAdversaire) {
             posagePossible = true; 
         } else if(ligne != 7 && colonne != 7){
-            if ( ligne != 0 && plateau[ligne-1][colonne] == couleurAdversaire) {
-                for(index = ligne; index > 0 && plateau[index][colonne] != couleur ; index--) {
-                    posagePossible = plateau[ligne-1][colonne] != RIEN;
-                }
-                haut = plateau[index][colonne] == couleur;
-            }
-            index = 0;
-            if (plateau[ligne+1][colonne] == couleurAdversaire && ligne != 7) {
-                for(index = ligne+1; index < 7 && plateau[index][colonne] != couleur; index++) {
-                    posagePossible = true;
-                }
-                bas = plateau[index][colonne] == couleur;
-            }
-            index = 0;
-            if (plateau[ligne][colonne+1] == couleurAdversaire && colonne != 7 ) {
-                for(index = colonne+1; index < 7 && plateau[ligne][index] != couleur ; index++) {
-                    posagePossible = true;
-                    System.out.println(plateau[ligne][index]);
-                }
-                droite = plateau[ligne][index] == couleur;
-            }
-            index = 0;
-            if ( colonne != 0 && plateau[ligne][colonne-1] == couleurAdversaire ) {
-                for(index = colonne; index > 0 && plateau[ligne][index] != couleur; index--) {
-                    posagePossible = true;
-                }
-                //System.out.println(plateau[ligne][index]);
-                gauche = plateau[ligne][index] == couleur;
-                System.out.println("\t" + haut + "\n" + gauche + "\t\t" + droite + "\n\t" + bas); 
-            }
+            posagePossible = ligne != 0 && plateau[ligne-1][colonne] == couleurAdversaire && plateau[ligne-1][colonne] != RIEN
+                    || plateau[ligne+1][colonne] == couleurAdversaire && ligne != 7 && plateau[ligne+1][colonne] != RIEN
+                    || plateau[ligne][colonne+1] == couleurAdversaire && colonne != 7 && plateau[ligne][colonne+1] != RIEN
+                    || colonne != 0 && plateau[ligne][colonne-1] == couleurAdversaire && plateau[ligne][colonne-1] != RIEN;
+            
         }
         return posagePossible;
 
@@ -164,6 +139,10 @@ public class Plateau {
      *         false sinon
      */
     public boolean autorisePosageDiagonal(int ligne, int colonne, ContenuCase couleur) {
+        //digoHautGauche;
+        //diagoBasGauche;
+        //digoHautDroite;
+        //diagoBasDroite;
         boolean posagePossible = false;
         ContenuCase couleurAdversaire;
         if (couleur == NOIR) {
@@ -171,6 +150,11 @@ public class Plateau {
         } else {
             couleurAdversaire = NOIR;
         }
+        posagePossible = ligne != 0 && plateau[ligne-1][colonne+1] == couleurAdversaire && plateau[ligne-1][colonne+1] != RIEN
+                || plateau[ligne-1][colonne-1] == couleurAdversaire && ligne != 7 && plateau[ligne-1][colonne-1] != RIEN
+                || plateau[ligne+1][colonne-1] == couleurAdversaire && ligne != 7 && plateau[ligne+1][colonne-1] != RIEN
+                || colonne != 0 && plateau[ligne+1][colonne+1] == couleurAdversaire && plateau[ligne+1][colonne+1] != RIEN;
+        
         return posagePossible;
 
     }
@@ -205,7 +189,7 @@ public class Plateau {
         bas = ligne !=7 && plateau[ligne+1][colonne] != RIEN ? true : false;
         droite = colonne !=7 && plateau[ligne][colonne+1] != RIEN ? true : false;
         gauche = colonne !=0 && plateau[ligne][colonne-1] != RIEN ? true : false;
-        System.out.println(plateau[ligne][colonne-1]);
+        //System.out.println(plateau[ligne][colonne-1]);
         if (haut) {
             for (int index = ligne-1; plateau[index][colonne] != couleur; index--) {
                 plateau[index][colonne] = couleur == NOIR ? NOIR : BLANC;

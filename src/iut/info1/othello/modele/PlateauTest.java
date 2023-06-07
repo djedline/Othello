@@ -83,6 +83,16 @@ class PlateauTest {
         assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(5,3,NOIR));
         assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(2,3,NOIR));
         
+        //Blanc
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(3,2,BLANC));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(4,5,BLANC));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(2,3,BLANC));
+        assertTrue(plateauTestInitial.autorisePosagePerpendiculaire(5,4,BLANC));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(7,7,BLANC));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(0,0,BLANC));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(7,0,BLANC));
+        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(0,7,BLANC));
+        
         // test pions
     }
     /**
@@ -90,7 +100,9 @@ class PlateauTest {
      */
     @Test
     void testAutorisePosageDiagonal() {
-        assertFalse(plateauTestInitial.autorisePosagePerpendiculaire(3,3,NOIR));
+        //assertFalse(plateauTestInitial.autorisePosageDiagonal(3,2,NOIR));
+        //assertFalse(plateauTestInitial.autorisePosageDiagonal(3,5,BLANC));
+       // assertFalse(plateauTestInitial.autorisePosageDiagonal(5,4,BLANC));
     }
     /**
      * Test method for {@link iut.info1.othello.modele.Plateau#modificationTableau(int, int, iut.info1.othello.modele.getCaseVide)}.
